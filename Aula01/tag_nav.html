@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo da tag NAV</title>
+
+    <style>
+        nav {
+            background-color: #f4c59e;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+<!--
+O texto "Menu principal" não aparece visualmente na página, mas é lido por tecnologias assistivas. 
+Por exemplo, um leitor de tela poderá anunciar:
+
+"Navegação, Menu principal"
+-->
+    <nav aria-label="Menu principal">
+        <ul>
+            <li>index.htmlInício</a></li>
+            <li>produtos.htmlProdutos</a></li>
+            <li>servicos.htmlServiços</a></li>
+            <li>contato.htmlContato</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Página Inicial</h2>
+        <p>Conteúdo principal da página.</p>
+    </main>
+    <footer>
+        <p>&copy; 2026 Meu Site</p>
+    </footer>
+</body>
+</html>
+

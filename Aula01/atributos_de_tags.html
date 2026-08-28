@@ -1,0 +1,460 @@
+<!--
+
+==========================================================================================================================
+Este arquivo contém exemplos de atributos de tags HTML, incluindo <img>, <a>, <ol>, <ul>, <li>, <nav>, <dl>, <dt> e <dd>.
+Ele serve como referência, mostrando como utilizar corretamente os atributos dessas tags.
+Não estão listados todos os atributos possíveis, apenas os mais comuns e relevantes para cada tag.
+
+Além dos exemplos listados neste arquivo, outros exemplos podem ser obtidos em:
+
+- exemplo_ODS.html
+- exemplo_para_curriculo.html
+- exemplo_tags_semânticas.html
+- index.html
+- lista_com_icones.html
+- tag_nav.html
+- tags_semanticas.html
+
+Conteúdo adicional pode ser encontrado em: https://developer.mozilla.org/pt-BR/docs/Web/HTML
+
+==========================================================================================================================
+
+
+Atributos da tag <img>
+======================
+
+| Atributo       | Descrição                                                                                                  |
+| -------------- | ---------------------------------------------------------------------------------------------------------- |
+| src            | Especifica o caminho (URL) da imagem que será exibida.                                                     |
+| alt            | Fornece um texto alternativo para acessibilidade e para situações em que a imagem não possa ser carregada. |
+| width          | Define a largura da imagem.                                                                                |
+| height         | Define a altura da imagem.                                                                                 |
+| title          | Exibe uma dica (tooltip) quando o cursor do mouse passa sobre a imagem.    
+| class          | Aplicação de CSS
+| style          | Estilos inline para a imagem. 
+-->  
+<img
+    src="imagens/notebook.jpg"
+    alt="Notebook Dell Inspiron aberto sobre uma mesa"
+    width="800"
+    height="600"
+    title="Notebook Dell Inspiron"
+    class="produto-destaque"
+    style="border: 2px solid #0078D4; border-radius: 10px;"
+>
+
+<!--
+Atributos da tag <a> - Anchor 
+=============================
+
+Usada para criar hiperlinks, permitindo navegar para outras páginas, 
+arquivos, e-mails, telefones ou seções da mesma página
+
+
+| Atributo       | Descrição                                                                            |
+| -------------- | ------------------------------------------------------------------------------------ |
+| href           | Especifica o destino do link (URL, arquivo, e-mail, telefone ou âncora na página).   |
+| target         | Define onde o link será aberto.                                                      |
+| title          | Exibe uma dica (tooltip) quando o usuário passa o mouse sobre o link.                |
+| download       | Indica que o recurso vinculado deve ser baixado em vez de aberto.                    |
+| id             | Identificador único do link.                                                         |
+| class          | Define uma ou mais classes CSS para estilização ou manipulação via JavaScript.       |
+| style          | Aplica estilos CSS diretamente ao elemento.                                          |
+| tabindex       | Define a ordem de navegação pelo teclado.                                            |
+| hidden         | Oculta o link da página.                                                             |
+
+Valores comuns do atributo target
+---------------------------------
+| Valor   | Descrição                                        |
+| ------- | ------------------------------------------------ |
+| _self   | Abre o link na mesma aba ou janela (padrão).     |
+| _blank  | Abre o link em uma nova aba ou janela.           |
+| _parent | Abre o link no quadro (frame) pai.               |
+| _top    | Abre o link ocupando toda a janela do navegador. |
+-->
+<a
+    href="https://www.microsoft.com"
+    target="_blank"
+    title="Visitar o site da Microsoft"
+    download
+    id="link-microsoft"
+    class="link-destaque"
+    style="color: blue; font-weight: bold; text-decoration: none;"
+    tabindex="1">
+    Microsoft
+</a>
+
+<!--
+Atributos da tag <ol> - Ordered List
+====================================
+
+Cria uma lista numerada ou com letras/romanos
+
+| Atributo | Descrição                                                      |
+| -------- | -------------------------------------------------------------- |
+| type     | Define o tipo de numeração da lista.                           |
+| start    | Define o número inicial da lista.                              |
+| reversed | Exibe a lista em ordem decrescente.                            |
+| id       | Identificador único da lista.                                  |
+| class    | Define uma ou mais classes CSS para estilização ou JavaScript. |
+| style    | Aplica estilos CSS diretamente à lista.                        |
+| hidden   | Oculta a lista da página.                                      |
+| tabindex | Define a ordem de navegação pelo teclado.                      |
+
+Valores do atributo type
+------------------------
+| Valor | Resultado             |
+| ----- | --------------------- |
+| 1     | 1, 2, 3, ... (padrão) |
+| A     | A, B, C, ...          |
+| a     | a, b, c, ...          |
+| I     | I, II, III, ...       |
+| i     | i, ii, iii, ...       |
+
+-->
+
+<ol
+    type="I"
+    start="10"
+    reversed
+    id="lista-cursos"
+    class="lista-destaque"
+    style="color: blue; font-size: 18px; border: 1px solid #ccc;"
+    tabindex="1">
+
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+
+</ol>
+
+<!--
+Atributos da tag <ul> - Unordered List
+======================================
+
+Cria uma lista com marcadores (bolinhas, quadrados etc.)
+
+| Atributo   | Descrição                                                      |
+| ---------- | -------------------------------------------------------------- |
+| id         | Identificador único da lista.                                  |
+| class      | Define uma ou mais classes CSS para estilização ou JavaScript. |
+| style      | Aplica estilos CSS diretamente à lista.                        |
+| hidden     | Oculta a lista da página.                                      |
+| tabindex   | Define a ordem de navegação pelo teclado.                      |
+
+Valores comuns de list-style-type
+---------------------------------
+| Valor    | Resultado    |
+| -------- | ------------ |
+| disc     | ● (padrão)   |
+| circle   | ○            |
+| square   | ■            |
+| none     | Sem marcador |
+  
+-->
+
+<ul
+    id="lista-produtos"
+    class="lista-destaque lista-formatada"
+    style="color: blue; list-style-type: square;"
+    tabindex="1">
+    <li>Notebook</li>
+    <li>Monitor</li>
+    <li>Teclado</li>
+</ul>
+
+<!--
+Atributos da tag <li> - List Item
+=================================
+
+Representa um item dentro de uma lista (<ul> ou <ol>)
+
+| Atributo   | Descrição                                                            |
+| ---------- | -------------------------------------------------------------------- |
+| value      | Define manualmente o número de um item em listas ordenadas (<ol>).   |
+| id         | Identificador único do item da lista.                                |
+| class      | Define uma ou mais classes CSS para estilização ou JavaScript.       |
+| style      | Aplica estilos CSS diretamente ao item.                              |
+| hidden     | Oculta o item da lista.                                              |
+| tabindex   | Define a ordem de navegação pelo teclado.                            |
+| title      | Exibe uma dica (tooltip) ao passar o mouse sobre o item.             |
+
+-->
+
+<ol>
+
+    <li
+        id="item-html"
+        class="item-destaque"
+        style="color: blue;"
+        title="Linguagem de marcação">
+        HTML
+    </li>
+
+    <li
+        value="10"
+        id="item-css"
+        class="item-destaque"
+        style="color: green;"
+        tabindex="1">
+        CSS
+    </li>
+
+    <li
+        id="item-js"
+        class="item-destaque"
+        style="color: red;">
+        JavaScript
+    </li>
+
+</ol>
+
+<!--
+Atributos comuns da tag <nav>
+=============================
+
+Agrupa os links de navegação do site
+
+| Atributo     | Descrição                                          |
+| ------------ | -------------------------------------------------- |
+| id           | Identificador único do menu.                       |
+| class        | Classe CSS para estilização.                       |
+| style        | Estilos CSS inline.                                |
+| hidden       | Oculta o menu.                                     |
+| tabindex     | Define a ordem de navegação pelo teclado.          |
+| aria-label   | Fornece uma descrição para tecnologias assistivas. |
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo da tag NAV</title>
+
+    <style>
+        nav {
+            background-color: #f4c59e;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+<!--
+O texto "Menu principal" não aparece visualmente na página, mas é lido por tecnologias assistivas. 
+Por exemplo, um leitor de tela poderá anunciar:
+
+"Navegação, Menu principal"
+-->
+    <nav aria-label="Menu principal">
+        <ul>
+            <li>index.htmlInício</a></li>
+            <li>produtos.htmlProdutos</a></li>
+            <li>servicos.htmlServiços</a></li>
+            <li>contato.htmlContato</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Página Inicial</h2>
+        <p>Conteúdo principal da página.</p>
+    </main>
+    <footer>
+        <p>&copy; 2026 Meu Site</p>
+    </footer>
+</body>
+</html>
+
+<!--
+Atributos das tags
+
+<dl> - Description Lists       - Agrupa termos e suas descrições
+<dt> - Definition Term         - Define o termo que será descrito.
+<dd> - Definition Description) - Define a descrição do termo.
+==================================================================
+
+Use as tags <dl>, <dt> e <dd> quando você precisa representar 
+uma relação termo → descrição, e não simplesmente uma lista de itens.
+
+Estrutura:
+----------
+
+<dl>
+    <dt>Termo</dt>
+    <dd>Descrição do termo</dd>
+</dl>
+
+| Atributo   | Descrição                                                      |
+| ---------- | -------------------------------------------------------------- |
+| id       | Identificador único da lista.                                  |
+| class    | Define uma ou mais classes CSS para estilização ou JavaScript. |
+| style    | Aplica estilos CSS diretamente à lista.                        |
+| hidden   | Oculta a lista da página.                                      |
+| tabindex | Define a ordem de navegação pelo teclado.                      |
+| title    | Exibe uma dica (tooltip) ao passar o mouse sobre a lista.      |
+
+Exemplos:
+---------
+
+1. Glossários
+--------------
+
+<dl>
+    <dt>HTML</dt>
+    <dd>Linguagem de marcação para criar páginas web.</dd>
+
+    <dt>CSS</dt>
+    <dd>Linguagem utilizada para estilizar páginas web.</dd>
+</dl>
+
+2. Dicionários de termos
+------------------------
+
+<dl>
+    <dt>CPU</dt>
+    <dd>Unidade Central de Processamento.</dd>
+
+    <dt>RAM</dt>
+    <dd>Memória utilizada pelos programas em execução.</dd>
+</dl>
+
+3. Perguntas e respostas (FAQ)
+------------------------------
+
+<dl>
+    <dt>O que é HTML?</dt>
+    <dd>É uma linguagem de marcação para páginas web.</dd>
+
+    <dt>O que é CSS?</dt>
+    <dd>É uma linguagem para estilização de páginas web.</dd>
+</dl>
+
+4. Dados de contato
+-------------------
+
+<dl>
+    <dt>Nome</dt>
+    <dd>João Silva</dd>
+
+    <dt>E-mail</dt>
+    <dd>joao@email.com</dd>
+
+    <dt>Telefone</dt>
+    <dd>(43) 99999-9999</dd>
+</dl>
+
+-->
+
+<dl
+    id="glossario"
+    class="lista-definicoes"
+    style="border: 1px solid #ccc; padding: 10px;"
+    tabindex="1"
+    title="Glossário de Tecnologias Web">
+
+    <dt
+        id="termo-html"
+        class="termo"
+        style="font-weight: bold;"
+        title="HyperText Markup Language">
+        HTML
+    </dt>
+
+    <dd
+        id="desc-html"
+        class="descricao"
+        style="margin-left: 20px;">
+        Linguagem de marcação utilizada para estruturar páginas web.
+    </dd>
+
+    <dt
+        id="termo-css"
+        class="termo"
+        style="font-weight: bold;">
+        CSS
+    </dt>
+
+    <dd
+        id="desc-css"
+        class="descricao"
+        style="margin-left: 20px;">
+        Linguagem utilizada para estilizar páginas web.
+    </dd>
+
+</dl>
+
+<!--
+Quando usar div, article, section, main, details e aside
+========================================================
+
+Comparação rápida
+-----------------
+
+| Situação                                        | Tag recomendada |
+| ----------------------------------------------- | --------------- |
+| Conteúdo principal da página                    | <main>          |
+| Agrupar conteúdo por assunto                    | <section>       |
+| Publicação independente                         | <article>       |
+| Conteúdo complementar                           | <aside>         |
+| Conteúdo expansível                             | <details>       |
+| Apenas agrupar elementos para CSS ou JavaScript | <div>           |
+
+
+| Tag       | Significado           | Quando usar                                                                | Exemplo típico                                |
+| --------- | --------------------- | -------------------------------------------------------------------------- | --------------------------------------------- |
+| <main>    | Conteúdo principal    | Para o conteúdo central da página. Geralmente existe apenas um por página. | Área principal de um site, artigo ou sistema. |
+| <section> | Seção                 | Para agrupar conteúdos relacionados sob um mesmo tema.                     | Seção "Produtos", "Serviços" ou "Contato".    |
+| <article> | Artigo                | Para um conteúdo independente que pode ser reutilizado sozinho.            | Post de blog, notícia, comentário ou produto. |
+| <aside>   | Conteúdo complementar | Para conteúdo relacionado ao principal, mas não essencial.                 | Barra lateral, anúncios, links relacionados.  |
+| <details> | Detalhes              | Para conteúdo que pode ser expandido e recolhido pelo usuário.             | FAQ, ajuda, observações adicionais.           |
+| <div>     | Divisão               | Agrupador genérico sem significado semântico.                              | Layout, containers e estilização CSS.         |
+
+-->
+
+<!-- exemplo completo com estas tag no arquivo exemplo_tags_semânticas.html 
+    ----------------------------------------------------------------------- -->
+
+<main>
+    <section>
+        <h1>Tutoriais HTML</h1>
+        <article>
+            <h2>O que é HTML?</h2>
+            <p>HTML é uma linguagem de marcação.</p>
+        </article>
+        <article>
+            <h2>O que é CSS?</h2>
+            <p>CSS é uma linguagem de estilos.</p>
+        </article>
+    </section>
+    <aside>
+        <h3>Links Úteis</h3>
+        <ul>
+            <li>MDN</li>
+            <li>W3C</li>
+        </ul>
+    </aside>
+    <details>
+        <summary>Mais informações</summary>
+        <p>Conteúdo complementar.</p>
+    </details>
+</main>

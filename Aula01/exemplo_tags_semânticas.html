@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exemplo de Tags Semânticas</title>
+    <style>
+      .card {
+        border: 1px solid #fb0303;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+      aside {
+        background-color: #e9e1e1;
+        padding: 10px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Tutoriais de Desenvolvimento Web</h1>
+      <section>
+        <h2>Últimos Artigos</h2>
+        <article>
+          <h3>Introdução ao HTML</h3>
+          <p>HTML é a linguagem utilizada para estruturar páginas web.</p>
+          <div class="card">
+            <strong>Dica:</strong>
+            Utilize tags semânticas para melhorar a acessibilidade.
+          </div>
+          <details>
+            <summary>Leia mais sobre HTML</summary>
+            <p>
+              HTML significa HyperText Markup Language e é a base de praticamente todos os sites.
+            </p>
+          </details>
+        </article>
+        <article>
+          <h3>Introdução ao CSS</h3>
+          <p>CSS é utilizado para definir a aparência dos elementos HTML.</p>
+          <details>
+            <summary>Leia mais sobre CSS</summary>
+            <p>
+              CSS significa Cascading Style Sheets e controla cores, fontes, espaçamentos e layouts.
+            </p>
+          </details>
+        </article>
+      </section>
+      <aside>
+        <h2>Artigos Relacionados</h2>
+        <ul>
+          <li>HTML Avançado</li>
+          <li>CSS Grid Layout</li>
+          <li>JavaScript Básico</li>
+        </ul>
+      </aside>
+    </main>
+  </body>
+</html>
+
+
+<!--
+Onde cada tag está sendo usada
+------------------------------
+
+main
+└── Conteúdo principal da página
+
+section
+└── Agrupa os artigos da seção "Últimos Artigos"
+
+article
+├── Introdução ao HTML
+└── Introdução ao CSS
+
+div
+└── Caixa de destaque (card) usada para layout/estilo
+
+details
+├── Informações adicionais sobre HTML
+└── Informações adicionais sobre CSS
+
+aside
+└── Lista de artigos relacionados
+
+LEMBRE-SE!:
+===========
+
+main    → conteúdo principal da página
+section → agrupamento por assunto
+article → conteúdo independente
+aside   → conteúdo complementar
+details → conteúdo expansível
+div     → agrupador genérico para layout e CSS
+
+-->
