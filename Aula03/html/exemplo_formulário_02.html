@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia de Inputs HTML</title>
+</head>
+
+<!-- A <fieldset> é uma tag usada para agrupar elementos relacionados dentro de um formulário. 
+     Ela é muito útil quando você quer organizar visualmente campos de um formulário, 
+     como por exemplo dados pessoais, endereço, preferências, etc.
+     Ela cria uma borda em volta do grupo de campos por padrão, tornando o formulário mais legível. -->
+
+<style>
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+
+  fieldset {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 2px solid #060606;
+    border-radius: 8px;
+  }
+
+  legend {
+    font-weight: bold;
+    padding: 0 10px;
+  }
+
+  label {
+    display: block;
+    margin: 8px 0;
+  }
+</style>
+
+
+<body>
+  <h1>Guia de Inputs HTML</h1>
+  <form>
+
+    <fieldset style="width: 300px">
+      <legend>Texto</legend>
+      <label>Texto: <input type="text" placeholder="Digite algo" /></label>
+      <label>Senha: <input type="password" /></label>
+      <label>Email: <input type="email" placeholder="exemplo@email.com" /></label>
+      <label>URL: <input type="url" placeholder="https://..." /></label>
+      <label>Telefone: <input type="tel" placeholder="(99) 99999-9999" /></label>
+      <label>Busca: <input type="search" placeholder="Pesquisar..." /></label>
+    </fieldset>
+
+    <fieldset style="width: 200px">
+      <legend>Números e valores</legend>
+      <label>Número: <input type="number" min="0" max="10" /></label>
+      <label>Range: <input type="range" min="0" max="100" /></label>
+      <label>Cor: <input type="color" /></label>
+    </fieldset>
+
+    <fieldset style="width: 300px">
+      <legend>Datas e tempo</legend>
+      <label>Data: <input type="date" /></label>
+      <label>Hora: <input type="time" /></label>
+      <label>Data e hora local: <input type="datetime-local" /></label>
+      <label>Mês: <input type="month" /></label>
+      <label>Semana: <input type="week" /></label>
+    </fieldset>
+
+    <fieldset style="width: 120px">
+      <legend>Seleções</legend>
+      <label><input type="checkbox" checked /> Checkbox 1</label>
+      <label><input type="checkbox" /> Checkbox 2</label>
+      <label><input type="radio" name="grupo1" value="1" /> Radio 1</label>
+      <label><input type="radio" name="grupo1" value="2" /> Radio 2</label>
+    </fieldset>
+
+    <fieldset style="width: 420px">
+      <legend>Arquivos e ocultos</legend>
+      <label>Arquivo: <input type="file" /></label>
+      <input type="hidden" name="oculto" value="12345" />
+      <p>(Esse campo oculto não aparece, mas envia valor 12345)</p>
+    </fieldset>
+
+    <fieldset style="width: 240px">
+      <legend>Botões</legend>
+      <input type="submit" value="Enviar" />
+      <input type="reset" value="Resetar" />
+      <input type="button" value="Botão Genérico" />
+    </fieldset>
+  </form>
+</body>
+
+</html>
