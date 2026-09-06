@@ -7,13 +7,7 @@
   <title>Guia de Inputs HTML</title>
 </head>
 
-<!-- A <fieldset> é uma tag usada para agrupar elementos relacionados dentro de um formulário. 
-     Ela é muito útil quando você quer organizar visualmente campos de um formulário, 
-     como por exemplo dados pessoais, endereço, preferências, etc.
-     Ela cria uma borda em volta do grupo de campos por padrão, tornando o formulário mais legível. -->
-
 <style>
-
   body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -22,70 +16,130 @@
   }
 
   fieldset {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px;
+    align-items: center;
     margin-bottom: 20px;
     padding: 15px;
     border: 2px solid #060606;
     border-radius: 8px;
   }
 
-  legend {
-    font-weight: bold;
-    padding: 0 10px;
+  legend,
+  fieldset p,
+  fieldset button {
+    grid-column: 1 / -1;
   }
 
   label {
-    display: block;
-    margin: 8px 0;
+    margin: 0;
+  }
+
+  /* display: flex deixa os três botõesna mesma linha e flex: 1 faz todos terem a mesma largura.*/
+  fieldset.botoes {
+    display: flex;
+    flex: 1;
+    gap: 8px;
+  }
+
+  fieldset.botoes input {
+    width: 120px;
+    height: 25px;
   }
 </style>
 
+<!-- for (tag <label) -- associa um rótulo a um campo de formulário [id]
+         id           -- conecta o label ao input [for]
+         name         -- define o nome do dado enviado quando o formulário é submetido
+-->
 
 <body>
   <h1>Guia de Inputs HTML</h1>
   <form>
 
-    <fieldset style="width: 300px">
-      <legend>Texto</legend>
-      <label>Texto: <input type="text" placeholder="Digite algo" /></label>
-      <label>Senha: <input type="password" /></label>
-      <label>Email: <input type="email" placeholder="exemplo@email.com" /></label>
-      <label>URL: <input type="url" placeholder="https://..." /></label>
-      <label>Telefone: <input type="tel" placeholder="(99) 99999-9999" /></label>
-      <label>Busca: <input type="search" placeholder="Pesquisar..." /></label>
-    </fieldset>
+    <!-- A <fieldset> é uma tag usada para agrupar elementos relacionados dentro de um formulário. 
+     Ela é muito útil quando você quer organizar visualmente campos de um formulário, 
+     como por exemplo dados pessoais, endereço, preferências, etc.
+     Ela cria uma borda em volta do grupo de campos por padrão, tornando o formulário mais legível. -->
+
+    <!-- Botão usado somente para abrir o modal; type="button" impede o envio do formulário. -->
+    <!-- onclick executa showModal() no dialog cujo id é "modalTexto". -->
+    <button type="button" onclick="modalTexto.showModal()">
+      Abrir campos de texto
+    </button>
+
+    <!-- A tag <dialog> cria uma janela modal nativa do HTML. -->
+    <!-- id="modalTexto" identifica este dialog para os comandos de abrir e fechar. -->
+    <dialog id="modalTexto">
+      <!-- O fieldset agrupa os campos exibidos dentro do modal. -->
+      <!-- style define a largura do conteúdo do modal. -->
+      <fieldset style="width: 300px">
+        <legend>Texto</legend>
+        <label for="texto">Texto:</label>
+        <input id="texto" name="texto" type="text" placeholder="Digite algo" />
+        <label for="senha">Senha:</label>
+        <input id="senha" name="senha" type="password" />
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" placeholder="exemplo@email.com" />
+        <label for="url">URL:</label>
+        <input id="url" name="url" type="url" placeholder="https://..." />
+        <label for="telefone">Telefone:</label>
+        <input id="telefone" name="telefone" type="tel" placeholder="(99) 99999-9999" />
+        <label for="busca">Busca:</label>
+        <input id="busca" name="busca" type="search" placeholder="Pesquisar..." />
+        <!-- type="button" impede o envio do formulário ao fechar o modal. -->
+        <!-- onclick executa close() e fecha o dialog identificado por "modalTexto". -->
+        <button type="button" onclick="modalTexto.close()">Fechar</button>
+      </fieldset>
+      <!-- Fecha a tag dialog, ou seja, o conteúdo do modal. -->
+    </dialog>
 
     <fieldset style="width: 200px">
       <legend>Números e valores</legend>
-      <label>Número: <input type="number" min="0" max="10" /></label>
-      <label>Range: <input type="range" min="0" max="100" /></label>
-      <label>Cor: <input type="color" /></label>
+      <label for="numero">Número:</label>
+      <input id="numero" name="numero" type="number" min="0" max="10" />
+      <label for="range">Range:</label>
+      <input id="range" name="range" type="range" min="0" max="100" />
+      <label for="cor">Cor:</label>
+      <input id="cor" name="cor" type="color" />
     </fieldset>
 
     <fieldset style="width: 300px">
       <legend>Datas e tempo</legend>
-      <label>Data: <input type="date" /></label>
-      <label>Hora: <input type="time" /></label>
-      <label>Data e hora local: <input type="datetime-local" /></label>
-      <label>Mês: <input type="month" /></label>
-      <label>Semana: <input type="week" /></label>
+      <label for="data">Data:</label>
+      <input id="data" name="data" type="date" />
+      <label for="hora">Hora:</label>
+      <input id="hora" name="hora" type="time" />
+      <label for="data-hora">Data e hora local:</label>
+      <input id="data-hora" name="data_hora" type="datetime-local" />
+      <label for="mes">Mês:</label>
+      <input id="mes" name="mes" type="month" />
+      <label for="semana">Semana:</label>
+      <input id="semana" name="semana" type="week" />
     </fieldset>
 
     <fieldset style="width: 120px">
       <legend>Seleções</legend>
-      <label><input type="checkbox" checked /> Checkbox 1</label>
-      <label><input type="checkbox" /> Checkbox 2</label>
-      <label><input type="radio" name="grupo1" value="1" /> Radio 1</label>
-      <label><input type="radio" name="grupo1" value="2" /> Radio 2</label>
+      <input id="checkbox-1" name="checkbox_1" type="checkbox" checked />
+      <label for="checkbox-1">Checkbox 1</label>
+      <input id="checkbox-2" name="checkbox_2" type="checkbox" />
+      <label for="checkbox-2">Checkbox 2</label>
+      <input id="radio-1" type="radio" name="grupo1" value="1" />
+      <label for="radio-1">Radio 1</label>
+      <input id="radio-2" type="radio" name="grupo1" value="2" />
+      <label for="radio-2">Radio 2</label>
     </fieldset>
 
     <fieldset style="width: 420px">
       <legend>Arquivos e ocultos</legend>
-      <label>Arquivo: <input type="file" /></label>
+      <label for="arquivo">Arquivo:</label>
+      <input id="arquivo" name="arquivo" type="file" />
       <input type="hidden" name="oculto" value="12345" />
       <p>(Esse campo oculto não aparece, mas envia valor 12345)</p>
     </fieldset>
 
-    <fieldset style="width: 240px">
+    <fieldset class="botoes" style="width: 240px">
       <legend>Botões</legend>
       <input type="submit" value="Enviar" />
       <input type="reset" value="Resetar" />
