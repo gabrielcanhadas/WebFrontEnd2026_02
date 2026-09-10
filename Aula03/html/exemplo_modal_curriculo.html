@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Exemplo</title>
+  <style>
+    #nome-completo,
+    #instagram {
+      width: 350px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 style="margin: 0px;  border: 1px solid rgb(247, 2, 2);
+  background-color: rgb(199, 223, 15);">Exemplo de modal para currículo</h2>
+  <br><br>
+  <button type="button" id="abrir-modal">Enviar informações de contato</button>
+
+  <dialog id="modal-contato">
+    <form id="form-contato" method="dialog" novalidate>
+      <h2>Formulário de contato</h2>
+
+      <p>
+        <label for="nome-completo">Nome completo:</label><br />
+        <input type="text" id="nome-completo" name="nome-completo" />
+      </p>
+
+      <p>
+        <label for="instagram">Link para o Instagram:</label><br />
+        <input type="url" id="instagram" name="instagram" placeholder="https://www.instagram.com/seu-usuario" />
+      </p>
+
+      <p>
+        <label for="whatsapp">Número do WhatsApp:</label><br />
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" />
+      </p>
+
+      <button type="submit">Enviar</button>
+      <button type="button" id="fechar-modal">Fechar</button>
+    </form>
+  </dialog>
+
+  <script>
+    const modal = document.getElementById('modal-contato');
+    const abrirModal = document.getElementById('abrir-modal');
+    const fecharModal = document.getElementById('fechar-modal');
+    const formulario = document.getElementById('form-contato');
+    const nomeCompleto = document.getElementById('nome-completo');
+    const instagram = document.getElementById('instagram');
+    const whatsapp = document.getElementById('whatsapp');
+
+    // As funções anônimas (arrow functions) são criadas sem nome e executadas
+    // quando o evento "click" acontece em cada botão.
+    abrirModal.addEventListener('click', () => modal.showModal());
+    fecharModal.addEventListener('click', () => modal.close());
+
+    // Esta função anônima é executada quando o formulário é enviado.
+    formulario.addEventListener('submit', (evento) => {
+      evento.preventDefault();
+     
+      const instagramValido = /^https:\/\/(www\.)?instagram\.com\/.+/.test(instagram.value.trim());
+      //O .test() é um método de RegExp em JavaScript que verifica se uma determinada string corresponde à expressão regular.
+      //em JavaScript, a regex é um objeto do tipo RegExp, e .test() é um método desse objeto.
+      //Portanto: objeto.metodo(valor)
+
+      if (nomeCompleto.value.trim() === '') {
+        alert('Informe o nome completo.');
+        nomeCompleto.focus();
+        return;
+      }
+
+      if (!instagramValido) {
+        alert('Informe um link válido do Instagram, começando com https://instagram.com/.');
+        instagram.focus();
+        return;
+      }
+
+      if (whatsapp.value.trim() === '') {
+        alert('Informe o número do WhatsApp.');
+        whatsapp.focus();
+        return;
+      }
+
+      alert('Formulário enviado com sucesso!');
+      formulario.reset();
+      modal.close();
+    });
+
+ /*
+      ====================================================================================================
+      esta explicação é sobre o uso de expressões regulares (regex) para a validação do link do Instagram.
+      a expressão regular usada está escrita na linha 68 e é chamada na linha 76
+      
+      /^https:\/\/(www\.)?instagram\.com\/.+/
+      
+      "O texto deve começar com https://, seguido opcionalmente de www., depois instagram.com/, 
+      e precisa haver pelo menos alguma coisa depois da barra."
+      
+      ====================================================================================================
+      
+        ^            → significa início do texto. A URL precisa começar exatamente ali.
+        https:\/\/   → procura literalmente por https://.
+                       \/ representa /.
+        (www\.)?     → procura por www. opcionalmente.
+                       (...) agrupa.
+                       ? significa "zero ou uma vez".
+                       Portanto, aceita tanto www.instagram.com quanto instagram.com.
+        instagram    → procura literalmente pela palavra instagram.
+                       \. → o ponto . escapado. Sem \, o ponto em regex significa "qualquer caractere".
+        com          → procura literalmente por com.
+        \/           → procura por /.
+        .+           → exige pelo menos um caractere depois da barra.
+                       . = qualquer caractere.
+                       + = uma ou mais vezes.
+      
+        Exemplos que passam
+        -------------------
+          https://instagram.com/usuario
+          https://www.instagram.com/usuario
+          https://instagram.com/p/ABC123
+          https://www.instagram.com/reel/XYZ
+      
+        Exemplos que não passam
+        ------------------------
+          http://instagram.com/usuario
+          instagram.com/usuario
+          https://facebook.com/usuario
+          https://instagram.com/
+      
+      As barras invertidas \ são usadas para "escapar" caracteres que têm um significado especial dentro de uma regex.
+      
+      ==================
+      \. — ponto literal
+      ==================
+      Em regex, . sozinho significa "qualquer caractere".
+      
+      Por exemplo:
+      ------------
+      instagram.com
+      
+      não significa necessariamente instagram.com. 
+      O . poderia representar qualquer coisa:
+      
+      instagramXcom
+      instagram-com
+      instagram1com
+      
+      Por isso usamos:
+      ----------------
+      instagram\.com
+      
+      O \. diz:
+      
+      "Quero um ponto de verdade aqui."
+      
+      ==================
+      \/ — barra literal
+      ==================
+      A / pode precisar ser escapada dependendo de como a regex é escrita.
+      
+      Por exemplo, em JavaScript, é comum delimitar uma regex assim:
+      --------------------------------------------------------------
+      /^https:\/\/instagram\.com\/.+/
+      
+      Veja que a regex começa e termina com /:
+      ----------------------------------------
+      /  regex aqui  /
+      
+      Então, se você colocasse simplesmente:
+      --------------------------------------
+      /^https://instagram.com/.+/
+      
+      as / poderiam ser interpretadas como delimitadores da regex, e não como parte do texto que você quer procurar.
+      
+      Por isso:
+      ---------
+      https:\/\/instagram\.com\/
+      
+      é uma forma segura de dizer:
+      ----------------------------
+      https://instagram.com/
+      
+      ==================
+      A ideia geral
+      ==================
+      A barra invertida \ geralmente significa:
+      
+      "Não interprete o próximo caractere pelo significado especial dele; trate-o de uma maneira literal/especial."
+      
+      Por exemplo:
+      ------------
+      
+      Regex	Significado
+      .	  qualquer caractere
+      \.	ponto literal .
+      +  	uma ou mais ocorrências
+      \+	sinal de + literal
+      ?	  opcional
+      \?	interrogação literal
+      /	  barra, dependendo do contexto
+      \/	barra literal
+      
+      */
+
+    //==========================================================================================================================
+    // Exemplo completo com uma função comum (nomeada), no lugar da função anônima: ver função anônima da linha 65 à linha 94
+    //==========================================================================================================================
+    // function validarFormulario(evento) {
+    //   evento.preventDefault();
+    //
+    //   const instagramValido = /^https:\/\/(www\.)?instagram\.com\/.+/.test(instagram.value.trim());
+    //
+    //   if (nomeCompleto.value.trim() === '') {
+    //     alert('Informe o nome completo.');
+    //     nomeCompleto.focus();
+    //     return;
+    //   }
+    //
+    //   if (!instagramValido) {
+    //     alert('Informe um link válido do Instagram, começando com https://instagram.com/.');
+    //     instagram.focus();
+    //     return;
+    //   }
+    //
+    //   if (whatsapp.value.trim() === '') {
+    //     alert('Informe o número do WhatsApp.');
+    //     whatsapp.focus();
+    //     return;
+    //   }
+    //
+    //   alert('Formulário enviado com sucesso!');
+    //   formulario.reset();
+    //   modal.close();
+    // }
+    //
+    // formulario.addEventListener('submit', validarFormulario);
+    //
+  </script>
+</body>
+
+</html>
