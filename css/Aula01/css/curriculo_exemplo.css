@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+
+@font-face {
+  font-family: "Google Sans Code";
+  src: url("../fontes/Google_Sans_Code/static/GoogleSansCode-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google Sans Code";
+  src: url("../fontes/Google_Sans_Code/static/GoogleSansCode-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Seletor por elemento */
+body {
+  margin: 0;
+  color: #203040;
+  background-color: #eaf3f5;
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  width: min(900px, calc(100% - 2rem));
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border: 1px solid #c5d9df;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgb(32 48 64 / 12%);
+}
+
+/* Seletor por ID */
+#perfil {
+  padding: 1.5rem;
+  color: #ffffff;
+  background-color: #145c67;
+  border-radius: 8px;
+}
+
+#perfil h1 {
+  margin: 0;
+  font-family: "Google Sans Code", monospace;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+#perfil p {
+  margin: 0.35rem 0 0;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+/* Seletor por classe */
+.secao {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid #d6e7ea;
+}
+
+.secao h2 {
+  margin-top: 0;
+  color: #145c67;
+  font-family: "Google Sans Code", monospace;
+  font-size: 1.35rem;
+  text-decoration: underline;
+  text-decoration-color: #e08f3e;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+
+.experiencia {
+  padding: 1rem;
+  background-color: #f4f8f8;
+  border-left: 4px solid #e08f3e;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li::marker {
+  color: #e08f3e;
+}
+
+/* Seletor por atributo */
+li[data-tipo="contato"] strong {
+  color: #145c67;
+}
+
+a[href^="https"] {
+  color: #146c94;
+  font-weight: 700;
+}
+
+/* Seletor por pseudo-classe */
+a:hover {
+  color: #c45722;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px solid #e08f3e;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  main {
+    width: calc(100% - 1rem);
+    box-sizing: border-box;
+    margin: 0.5rem auto;
+    padding: 1rem;
+  }
+}

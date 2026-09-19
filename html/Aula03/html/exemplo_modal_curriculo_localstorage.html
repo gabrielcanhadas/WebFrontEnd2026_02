@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Exemplo</title>
+  <style>
+    #nome-completo,
+    #instagram {
+      width: 350px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 style="margin: 0px;  border: 1px solid rgb(247, 2, 2);
+  background-color: rgb(199, 223, 15);">Exemplo de modal para currículo</h2>
+  <br><br>
+  <button type="button" id="abrir-modal">Enviar informações de contato</button>
+  <button type="button" id="recuperar-contatos">Recuperar todos os contatos</button>
+
+  <section id="contatos-salvos" hidden>
+    <h2>Contatos armazenados</h2>
+    <ul id="lista-contatos"></ul>
+  </section>
+
+  <dialog id="modal-contato">
+    <form id="form-contato" method="dialog" novalidate>
+      <h2>Formulário de contato</h2>
+
+      <p>
+        <label for="nome-completo">Nome completo:</label><br />
+        <input type="text" id="nome-completo" name="nome-completo" />
+      </p>
+
+      <p>
+        <label for="instagram">Link para o Instagram:</label><br />
+        <input type="url" id="instagram" name="instagram" placeholder="https://www.instagram.com/seu-usuario" />
+      </p>
+
+      <p>
+        <label for="whatsapp">Número do WhatsApp:</label><br />
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" />
+      </p>
+
+      <button type="submit">Enviar</button>
+      <button type="button" id="fechar-modal">Fechar</button>
+    </form>
+  </dialog>
+
+  <script>
+    const modal = document.getElementById('modal-contato');
+    const abrirModal = document.getElementById('abrir-modal');
+    const fecharModal = document.getElementById('fechar-modal');
+    const formulario = document.getElementById('form-contato');
+    const nomeCompleto = document.getElementById('nome-completo');
+    const instagram = document.getElementById('instagram');
+    const whatsapp = document.getElementById('whatsapp');
+    const chaveDadosContato = 'dados-contato-curriculo';
+    const recuperarContatos = document.getElementById('recuperar-contatos');
+    const contatosSalvos = document.getElementById('contatos-salvos');
+    const listaContatos = document.getElementById('lista-contatos');
+
+    function obterContatos() {
+      const dadosSalvos = localStorage.getItem(chaveDadosContato);
+      if (!dadosSalvos) return [];
+      const dados = JSON.parse(dadosSalvos);
+      return Array.isArray(dados) ? dados : [dados];
+    }
+
+    function exibirContatos() {
+      const contatos = obterContatos();
+      listaContatos.innerHTML = '';
+
+      contatos.forEach((contato) => {
+        const item = document.createElement('li');
+        item.textContent = `${contato.nomeCompleto} | ${contato.instagram} | ${contato.whatsapp}`;
+        listaContatos.appendChild(item);
+      });
+
+      contatosSalvos.hidden = contatos.length === 0;
+      if (contatos.length === 0) alert('Nenhum contato foi armazenado ainda.');
+    }
+
+    abrirModal.addEventListener('click', () => modal.showModal());
+    fecharModal.addEventListener('click', () => modal.close());
+    recuperarContatos.addEventListener('click', exibirContatos);
+
+    formulario.addEventListener('submit', (evento) => {
+      evento.preventDefault();
+
+      const instagramValido = /^https:\/\/(www\.)?instagram\.com\/.+/.test(instagram.value.trim());
+
+      if (nomeCompleto.value.trim() === '') {
+        alert('Informe o nome completo.');
+        nomeCompleto.focus();
+        return;
+      }
+
+      if (!instagramValido) {
+        alert('Informe um link válido do Instagram, começando com https://instagram.com/.');
+        instagram.focus();
+        return;
+      }
+
+      if (whatsapp.value.trim() === '') {
+        alert('Informe o número do WhatsApp.');
+        whatsapp.focus();
+        return;
+      }
+
+      const dadosContato = {
+        nomeCompleto: nomeCompleto.value.trim(),
+        instagram: instagram.value.trim(),
+        whatsapp: whatsapp.value.trim()
+      };
+
+      const contatos = obterContatos();
+      contatos.push(dadosContato);
+      localStorage.setItem(chaveDadosContato, JSON.stringify(contatos));
+
+      alert('Formulário enviado com sucesso!');
+      formulario.reset();
+      modal.close();
+    });
+  </script>
+</body>
+
+</html>

@@ -95,56 +95,76 @@
       <!-- Fecha a tag dialog, ou seja, o conteúdo do modal. -->
     </dialog>
 
-    <fieldset style="width: 200px">
-      <legend>Números e valores</legend>
-      <label for="numero">Número:</label>
-      <input id="numero" name="numero" type="number" min="0" max="10" />
-      <label for="range">Range:</label>
-      <input id="range" name="range" type="range" min="0" max="100" />
-      <label for="cor">Cor:</label>
-      <input id="cor" name="cor" type="color" />
-    </fieldset>
+    <button type="button" onclick="modalNumeros.showModal()">Abrir números e valores</button><br>
+    <dialog id="modalNumeros">
+      <fieldset style="width: 200px">
+        <legend>Números e valores</legend>
+        <label for="numero">Número:</label>
+        <input id="numero" name="numero" type="number" min="0" max="10" />
+        <label for="range">Range:</label>
+        <input id="range" name="range" type="range" min="0" max="100" />
+        <label for="cor">Cor:</label>
+        <input id="cor" name="cor" type="color" />
+        <button type="button" onclick="modalNumeros.close()">Fechar</button>
+      </fieldset>
+    </dialog>
 
-    <fieldset style="width: 300px">
-      <legend>Datas e tempo</legend>
-      <label for="data">Data:</label>
-      <input id="data" name="data" type="date" />
-      <label for="hora">Hora:</label>
-      <input id="hora" name="hora" type="time" />
-      <label for="data-hora">Data e hora local:</label>
-      <input id="data-hora" name="data_hora" type="datetime-local" />
-      <label for="mes">Mês:</label>
-      <input id="mes" name="mes" type="month" />
-      <label for="semana">Semana:</label>
-      <input id="semana" name="semana" type="week" />
-    </fieldset>
+    <button type="button" onclick="modalDatas.showModal()">Abrir datas e tempo</button><br>
+    <dialog id="modalDatas">
+      <fieldset style="width: 300px">
+        <legend>Datas e tempo</legend>
+        <label for="data">Data:</label>
+        <input id="data" name="data" type="date" />
+        <label for="hora">Hora:</label>
+        <input id="hora" name="hora" type="time" />
+        <label for="data-hora">Data e hora local:</label>
+        <input id="data-hora" name="data_hora" type="datetime-local" />
+        <label for="mes">Mês:</label>
+        <input id="mes" name="mes" type="month" />
+        <label for="semana">Semana:</label>
+        <input id="semana" name="semana" type="week" />
+        <button type="button" onclick="modalDatas.close()">Fechar</button>
+      </fieldset>
+    </dialog>
 
-    <fieldset style="width: 120px">
-      <legend>Seleções</legend>
-      <input id="checkbox-1" name="checkbox_1" type="checkbox" checked />
-      <label for="checkbox-1">Checkbox 1</label>
-      <input id="checkbox-2" name="checkbox_2" type="checkbox" />
-      <label for="checkbox-2">Checkbox 2</label>
-      <input id="radio-1" type="radio" name="grupo1" value="1" />
-      <label for="radio-1">Radio 1</label>
-      <input id="radio-2" type="radio" name="grupo1" value="2" />
-      <label for="radio-2">Radio 2</label>
-    </fieldset>
+    <button type="button" onclick="modalSelecoes.showModal()">Abrir seleções</button><br>
+    <dialog id="modalSelecoes">
+      <fieldset style="width: 120px">
+        <legend>Seleções</legend>
+        <input id="checkbox-1" name="checkbox_1" type="checkbox" checked />
+        <label for="checkbox-1">Checkbox 1</label>
+        <input id="checkbox-2" name="checkbox_2" type="checkbox" />
+        <label for="checkbox-2">Checkbox 2</label>
+        <input id="radio-1" type="radio" name="grupo1" value="1" />
+        <label for="radio-1">Radio 1</label>
+        <input id="radio-2" type="radio" name="grupo1" value="2" />
+        <label for="radio-2">Radio 2</label>
+        <button type="button" onclick="modalSelecoes.close()">Fechar</button>
+      </fieldset>
+    </dialog>
 
-    <fieldset style="width: 420px">
-      <legend>Arquivos e ocultos</legend>
-      <label for="arquivo">Arquivo:</label>
-      <input id="arquivo" name="arquivo" type="file" />
-      <input type="hidden" name="oculto" value="12345" />
-      <p>(Esse campo oculto não aparece, mas envia valor 12345)</p>
-    </fieldset>
+    <button type="button" onclick="modalArquivos.showModal()">Abrir arquivos e ocultos</button><br>
+    <dialog id="modalArquivos">
+      <fieldset style="width: 420px">
+        <legend>Arquivos e ocultos</legend>
+        <label for="arquivo">Arquivo:</label>
+        <input id="arquivo" name="arquivo" type="file" />
+        <input type="hidden" name="oculto" value="12345" />
+        <p>(Esse campo oculto não aparece, mas envia valor 12345)</p>
+        <button type="button" onclick="modalArquivos.close()">Fechar</button>
+      </fieldset>
+    </dialog>
 
-    <fieldset class="botoes" style="width: 240px">
-      <legend>Botões</legend>
-      <input type="submit" value="Enviar" />
-      <input type="reset" value="Resetar" />
-      <input type="button" value="Botão Genérico" />
-    </fieldset>
+    <button type="button" onclick="modalBotoes.showModal()">Abrir botões</button>
+    <dialog id="modalBotoes">
+      <fieldset class="botoes" style="width: 240px">
+        <legend>Botões</legend>
+        <input type="submit" value="Enviar" />
+        <input type="reset" value="Resetar" />
+        <input type="button" value="Botão Genérico" />
+        <button type="button" onclick="modalBotoes.close()">Fechar</button>
+      </fieldset>
+    </dialog>
   </form>
 </body>
 

@@ -1,0 +1,67 @@
+/* Fontes locais */
+@font-face {
+  font-family: "Lexend";
+  src: url("../fontes/Lexend/static/Lexend-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lexend";
+  src: url("../fontes/Lexend/static/Lexend-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google Sans Code";
+  src: url("../fontes/Google_Sans_Code/static/GoogleSansCode-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google Sans Code";
+  src: url("../fontes/Google_Sans_Code/static/GoogleSansCode-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Estilos gerais */
+body {
+  margin: 0;
+}
+
+main {
+  padding: 0 2rem;
+}
+
+/* Cabeçalho */
+.gradiente {
+  padding: 1rem 2rem;
+  color: #fff;
+  background: linear-gradient(90deg, rgb(12, 0, 120) 0%, rgb(9, 9, 121) 5%, rgb(0, 212, 255) 100%);
+}
+
+.gradiente h1 {
+  margin: 0;
+}
+
+/* Tipografia */
+.lx {
+  font-family: "Lexend", sans-serif;
+  font-size: 2.5rem;
+}
+
+.gsc {
+  font-family: "Google Sans Code", monospace;
+  font-size: 1.25rem;
+}
+
+div{
+	gap: 2rem;
+}
