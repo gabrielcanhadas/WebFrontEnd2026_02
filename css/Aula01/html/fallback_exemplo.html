@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplo de Fallback</title>
+  <link rel="stylesheet" href="../css/explicacao_fallback.css" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #eeeeee;
+      background: linear-gradient(to right, #eeeeee, #ffffff);
+      padding: 1.5rem;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .container {
+      display: block;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .botao {
+      background: blue;
+      background: red;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Exemplo de Fallback</h1>
+      <p>Este card usa uma cor de fundo e um gradiente.</p>
+
+      <picture>
+        <source srcset="../imagens/ods4.webp" width="300" height="200" type="image/webp" />
+        <img src="../imagens/ods4.png" alt="Imagem de exemplo" />
+      </picture>
+
+      <button class="botao">Botão de exemplo</button>
+    </div>
+  </div>
+</body>
+
+</html>

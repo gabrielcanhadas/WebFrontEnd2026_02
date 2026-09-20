@@ -7,6 +7,14 @@
   font-display: swap;
 }
 
+body {
+  font-family: "Arial", sans-serif;
+  /*
+Arial → primeira opção
+sans-serif → fallback
+*/
+}
+
 @font-face {
   font-family: "Lexend";
   src: url("../fontes/Lexend/static/Lexend-Bold.ttf") format("truetype");
@@ -62,6 +70,6 @@ main {
   font-size: 1.25rem;
 }
 
-div{
-	gap: 2rem;
+div {
+  gap: 2rem;
 }

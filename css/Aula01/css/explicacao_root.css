@@ -1,0 +1,240 @@
+/*
+No CSS, :root é um seletor de pseudo-classe que representa o elemento raiz do documento HTML. 
+Em uma página HTML comum, esse elemento é o <html>. Portanto, quando escrevemos :root em CSS, 
+estamos selecionando o elemento <html> da página.
+
+Por exemplo:
+*/
+
+:root {
+  background-color: lightblue;
+}
+
+/*
+Esse código é equivalente, em uma página HTML comum, a:
+*/
+
+html {
+  background-color: lightblue;
+}
+
+/*
+A principal vantagem de usar :root aparece quando trabalhamos com variáveis CSS, 
+também chamadas de custom properties. É muito comum declarar essas variáveis 
+dentro de :root para que elas possam ser utilizadas em diferentes partes da página.
+
+Por exemplo:
+*/
+
+:root {
+  --cor-principal: #3498db;
+  --cor-texto: #333;
+  --espacamento: 20px;
+}
+
+/*
+Nesse caso, criamos três variáveis: --cor-principal, --cor-texto e --espacamento. 
+Para utilizar uma variável CSS, usamos a função var():
+*/
+
+body {
+  color: var(--cor-texto);
+}
+
+button {
+  background-color: var(--cor-principal);
+  padding: var(--espacamento);
+}
+
+/*
+Isso é muito útil porque podemos alterar um valor em um único lugar e essa alteração 
+será refletida em todos os elementos que utilizam a variável. Por exemplo, 
+se quisermos mudar a cor principal da página, basta alterar:
+*/
+
+:root {
+  --cor-principal: #e74c3c;
+}
+
+/*
+Todos os elementos que utilizam var(--cor-principal) passarão a utilizar a nova cor.
+
+As variáveis declaradas em :root normalmente possuem um escopo global, ou seja, 
+podem ser utilizadas por praticamente qualquer elemento da página:
+*/
+
+:root {
+  --cor-fundo: #f5f5f5;
+  --cor-texto: #222;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+h1 {
+  color: var(--cor-texto);
+}
+
+.card {
+  background-color: white;
+}
+
+/*
+Também podemos usar :root para criar um pequeno sistema de cores:
+*/
+
+:root {
+  --primary: #2563eb;
+  --secondary: #64748b;
+  --success: #16a34a;
+  --danger: #dc2626;
+}
+
+/*
+Depois:
+*/
+
+.botao-principal {
+  background-color: var(--primary);
+}
+
+.botao-sucesso {
+  background-color: var(--success);
+}
+
+.botao-excluir {
+  background-color: var(--danger);
+}
+
+/*
+Outra utilização bastante comum é definir tamanhos e espaçamentos:
+*/
+
+:root {
+  --tamanho-fonte: 16px;
+  --espacamento-pequeno: 8px;
+  --espacamento-medio: 16px;
+  --espacamento-grande: 32px;
+}
+
+body {
+  font-size: var(--tamanho-fonte);
+}
+
+.card {
+  padding: var(--espacamento-medio);
+  margin-bottom: var(--espacamento-grande);
+}
+
+/*
+Uma característica importante das variáveis CSS é que elas podem ser 
+alteradas em outros seletores. Por exemplo:
+*/
+
+:root {
+  --cor-fundo: white;
+  --cor-texto: black;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/*
+Podemos criar uma classe que substitui essas variáveis:
+*/
+
+.dark {
+  --cor-fundo: #222;
+  --cor-texto: white;
+}
+
+/*
+Se o HTML for:
+
+<body class="dark">
+  <h1>Meu site</h1>
+</body>
+
+O body passará a utilizar os valores definidos em .dark. 
+Isso permite, por exemplo, criar facilmente um modo escuro.
+
+Também podemos combinar :root com calc():
+*/
+
+:root {
+  --espacamento: 20px;
+}
+
+.card {
+  padding: calc(var(--espacamento) * 2);
+}
+
+/*
+Nesse exemplo, o padding será de 40px.
+
+É importante entender também a diferença entre :root e body. 
+O :root representa o elemento <html>, enquanto body representa o conteúdo visível da página:
+*/
+
+:root {
+  --cor-principal: blue;
+}
+
+body {
+  background-color: white;
+}
+
+/*
+Aqui, :root está sendo usado principalmente como um local para armazenar 
+configurações e variáveis globais, enquanto body está sendo estilizado como o corpo da página.
+
+Em resumo, :root é uma pseudo-classe que seleciona o elemento raiz do documento. 
+Em HTML, normalmente esse elemento é o <html>. Embora possamos utilizá-lo para 
+aplicar estilos diretamente ao elemento raiz, sua utilização mais comum e importante 
+é como local para declarar variáveis CSS globais.
+
+Um exemplo completo seria:
+*/
+
+:root {
+  --cor-principal: #2563eb;
+  --cor-secundaria: #64748b;
+  --cor-fundo: #f8fafc;
+  --cor-texto: #1e293b;
+  --espacamento: 20px;
+  --borda-arredondada: 8px;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  padding: var(--espacamento);
+  border-radius: var(--borda-arredondada);
+  background-color: white;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--borda-arredondada);
+  background-color: var(--cor-principal);
+  color: white;
+}
+
+button:hover {
+  background-color: var(--cor-secundaria);
+}
+
+/*
+A ideia principal é: :root é o elemento raiz da página e é muito utilizado 
+para centralizar variáveis CSS que serão reutilizadas em várias partes do projeto. 
+Isso deixa o CSS mais organizado, reutilizável e fácil de alterar.
+*/

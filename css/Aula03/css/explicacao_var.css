@@ -1,0 +1,88 @@
+/*
+  Variáveis globais do tema claro.
+  Elas podem ser usadas em todos os elementos da página com var().
+*/
+:root {
+  --cor-fundo: #f5f5f5;
+  --cor-texto: #222222;
+  --cor-card: #ffffff;
+  --cor-borda: #dddddd;
+  --cor-principal: #2563eb;
+  --cor-principal-hover: #1d4ed8;
+  --espacamento: 20px;
+  --raio: 10px;
+  --transicao: 0.3s;
+}
+
+/*
+  Para demonstrar o tema escuro, adicione a classe dark ao elemento body.
+  As variáveis abaixo sobrescrevem os valores definidos em :root.
+*/
+.dark {
+  --cor-fundo: #121212;
+  --cor-texto: #f5f5f5;
+  --cor-card: #1e1e1e;
+  --cor-borda: #333333;
+  --cor-principal: #60a5fa;
+  --cor-principal-hover: #93c5fd;
+}
+
+/* O seletor universal inclui a borda e o preenchimento no tamanho dos elementos. */
+* {
+  box-sizing: border-box;
+}
+
+/* O corpo utiliza as variáveis do tema atualmente aplicado. */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition:
+    background-color var(--transicao),
+    color var(--transicao);
+}
+
+/* Cabeçalho da página. */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espacamento);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+/* Área central que limita a largura do conteúdo. */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 var(--espacamento);
+}
+
+/* Cartão que também responde às variáveis dos temas. */
+.card {
+  padding: 30px;
+  background-color: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  transition:
+    background-color var(--transicao),
+    border-color var(--transicao);
+}
+
+/* Botões usam a cor principal e mudam no estado hover. */
+.primary-button,
+#themeButton {
+  padding: 10px 16px;
+  color: white;
+  cursor: pointer;
+  background-color: var(--cor-principal);
+  border: none;
+  border-radius: var(--raio);
+  transition: background-color var(--transicao);
+}
+
+.primary-button:hover,
+#themeButton:hover {
+  background-color: var(--cor-principal-hover);
+}
