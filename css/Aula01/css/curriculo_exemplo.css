@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: "Lexend";
-  src: url("../fontes/Lexend/static/Lexend-Regular.ttf") format("truetype");
+  src: url("../../../fontes/Lexend/static/Lexend-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: "Lexend";
-  src: url("../fontes/Lexend/static/Lexend-Bold.ttf") format("truetype");
+  src: url("../../../fontes/Lexend/static/Lexend-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -30,7 +30,7 @@
 
 @font-face {
   font-family: "Google Sans Code";
-  src: url("../fontes/Google_Sans_Code/static/GoogleSansCode-Regular.ttf") format("truetype");
+  src: url("../../../fontes/Google_Sans_Code/static/GoogleSansCode-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -38,7 +38,7 @@
 
 @font-face {
   font-family: "Google Sans Code";
-  src: url("../fontes/Google_Sans_Code/static/GoogleSansCode-Bold.ttf") format("truetype");
+  src: url("../../../fontes/Google_Sans_Code/static/GoogleSansCode-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
