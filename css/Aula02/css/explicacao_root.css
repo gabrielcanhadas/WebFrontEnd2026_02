@@ -1,7 +1,7 @@
 /*
-No CSS, :root é um seletor de pseudo-classe que representa o elemento raiz do documento HTML. 
-Em uma página HTML comum, esse elemento é o <html>. Portanto, quando escrevemos :root em CSS, 
-estamos selecionando o elemento <html> da página.
+No CSS, :root é um seletor de pseudo-classe que representa o emento raiz do documento HTML. 
+Em uma página HTML comum, esse elemento é o <html>. Portanto, quando escrevemos 
+:root em CSS, estamos selecionando o elemento <html> da página.
 
 Por exemplo:
 */

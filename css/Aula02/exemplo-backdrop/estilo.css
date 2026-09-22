@@ -1,0 +1,108 @@
+/* CONFIGURAÇÃO GERAL */
+/* Remove as margens e os espaçamentos padrão do navegador.
+   box-sizing: border-box inclui padding e border no tamanho dos elementos.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+min-height: 100vh;
+- min-height: Altura mínima. O elemento nunca fica menor do que o valor definido, mas pode expandir se precisar.
+- 100: Quantidade de unidades.
+- vh: Abreviação de viewport height (altura da área de visualização). 100vh equivale a 100% da altura da janela do navegador
+
+Garante que o elemento ocupa a tela inteira inicialmente, mas se o conteúdo for grande, 
+a caixa cresce naturalmente e cria a barra de rolagem de forma correta.
+*/
+
+/* BODY */
+body {
+  min-height: 100vh; /* Ocupa pelo menos toda a altura da janela do navegador. */
+  display: flex; /* Utiliza Flexbox para centralizar o container na página. */
+  justify-content: center; /* Centraliza o conteúdo horizontal e verticalmente. */
+  align-items: center;
+  font-family:"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; /* Define a fonte utilizada na página. */
+  font-size: 20px; /* Define o tamanho da fonte. */
+  font-weight: 150; /* Define a espessura da fonte. */
+  padding: 20px; /* Cria espaço entre o 'conteúdo e as bordas da tela. */
+  background: #222; /* Define a cor ao redor do container. */
+}
+
+/* CONTAINER */
+.container {
+  width: 100%; /* Ocupa toda a largura disponível até o limite de 1000px. */
+  max-width: 1000px; /* Define a largura máxima do container. */
+  height: 600px; /* Define a altura do container. */
+  position: relative; /* Permite posicionar a imagem e o card em relação ao container. */
+  overflow: hidden; /* Esconde o que ultrapassar os limites do container. */
+  border-radius: 20px; /* Arredonda os cantos do container. */
+}
+
+/* IMAGEM */
+.imagem-fundo {
+  width: 100%; /* Ocupa toda a largura do container. */
+  height: 100%; /* Ocupa toda a altura do container. */
+  object-fit: cover; /* Preenche o espaço sem distorcer as proporções da imagem. */
+  object-position: center; /* Define o ponto central da imagem. */
+  position: absolute; /* Permite colocar a imagem atrás do card. */
+  top: 0; /* Posiciona a imagem no canto superior esquerdo. */
+  left: 0;
+  z-index: 1; /* Define a imagem como a primeira camada. */
+}
+
+/* CARD */
+.cartao {
+  position: absolute; /* Posiciona o card sobre a imagem. */
+  z-index: 2; /* Coloca o card acima da imagem. */
+  top: 50%; /* Posiciona o canto do card no centro do container. */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza o próprio card no ponto definido acima. */
+  width: 80%; /* Define a largura do card. */
+  max-width: 500px; /* Define uma largura máxima. */
+  background: rgba(255, 255, 255, 0.3); /* Permite enxergar a imagem através do card. */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Define uma borda branca parcialmente transparente. */
+  border-radius: 20px; /* Arredonda os cantos do card. */
+  padding: 40px; /* Define o espaçamento interno do card. */
+  backdrop-filter: blur(10px); /* Desfoca em 10 pixels o conteúdo que está atrás do card. */
+  -webkit-backdrop-filter: blur(10px); /* Versão com prefixo para melhorar a compatibilidade. */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Cria uma sombra ao redor do card. */
+  color: #ffffff; /* Define a cor do texto. */
+  text-align: center; /* Centraliza o texto. */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75); //* Cria uma sombra escura atrás das letras.
+                                                     1px: deslocamento horizontal.
+                                                     1px: deslocamento vertical.
+                                                     3px: intensidade do desfoque.
+                                                     rgba(..., 0.75): sombra preta com 75% de opacidade. */
+  /*text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+  cria uma sombra escura ao redor das letras, fazendo com que o texto branco 
+  continue legível mesmo quando atrás dele houver uma região clara da imagem. */
+}
+
+/* TÍTULO */
+.cartao h1 {
+  margin-bottom: 20px; /* Cria um espaço de 20px abaixo do título. */
+  font-size: 2.2rem; /* Define o tamanho da fonte do título. 
+                        rem utiliza como referência o tamanho da fonte do elemento raiz (html). */
+  font-weight: 700; /* Deixa o texto do título mais espesso, destacando-o dos parágrafos. */
+  color: #ffffff; /* Define a cor do título como branco. */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.80); /* Cria uma sombra escura atrás do texto.
+                                                     2px: deslocamento horizontal.
+                                                     2px: deslocamento vertical.
+                                                     4px: intensidade do desfoque.
+                                                     rgba(..., 0.80): sombra preta com 80% de opacidade. */
+}
+
+/* PARÁGRAFOS */
+.cartao p {
+  margin-bottom: 15px; /* Cria um espaço de 15px abaixo de cada parágrafo. */
+  line-height: 1.6; /* Aumenta o espaço vertical entre as linhas, facilitando a leitura do texto. */
+  font-weight: 500; /* Deixa o texto um pouco mais espesso, aumentando sua visibilidade sobre a imagem. */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75); /* Cria uma sombra escura atrás das letras.
+                                                     1px: deslocamento horizontal.
+                                                     1px: deslocamento vertical.
+                                                     3px: intensidade do desfoque.
+                                                     rgba(..., 0.75): sombra preta com 75% de opacidade. */
+}

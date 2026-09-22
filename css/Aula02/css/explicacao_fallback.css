@@ -1,0 +1,81 @@
+﻿/*
+Fallback em HTML e CSS
+
+Em HTML e CSS, o termo fallback significa oferecer uma alternativa 
+para o caso de o navegador não conseguir utilizar determinado recurso. 
+Isso é importante porque diferentes navegadores, versões e dispositivos 
+podem não oferecer suporte às mesmas funcionalidades.
+
+A ideia básica é: primeiro fornecemos uma alternativa compatível e 
+depois tentamos utilizar o recurso mais moderno. Se o navegador 
+entender o recurso moderno, ele o utiliza. Caso contrário, utiliza a alternativa.
+*/
+
+/*
+Exemplo de fallback em fontes.
+O navegador tenta usar Arial, depois Helvetica e, por fim, 
+uma fonte genérica sans-serif.
+*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  padding: 2rem;
+}
+
+/*
+Fallback com propriedades CSS.
+A primeira declaração funciona como alternativa compatível; 
+a segunda tenta usar um recurso mais moderno.
+*/
+.card {
+  background: #ff0000;
+  background: linear-gradient(to right, #f1c5c5, #ffffff);
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/*
+Fallback com layout.
+Se o navegador não suportar display: flex, ele pode manter display: block.
+*/
+.container {
+  display: block;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/*
+Fallback com suporte do navegador.
+@supports verifica se a feature existe antes de aplicar o novo estilo.
+*/
+@supports (backdrop-filter: blur(10px)) {
+  .card {
+    backdrop-filter: blur(10px);
+  }
+}
+
+/*
+A ordem das declarações importa.
+Se a segunda regra for inválida, o navegador mantém a primeira e ignora a segunda.
+*/
+.botao {
+  background: blue;
+  background: red;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/*
+Resumo:
+Fallback em HTML/CSS é uma estratégia de compatibilidade. 
+O desenvolvedor oferece uma solução principal e outra 
+alternativa para situações em que o navegador não consegue 
+utilizar o recurso principal.
+*/
