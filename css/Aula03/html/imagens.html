@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imagens Sobrepostas e Arrastáveis</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .container img {
+      position: absolute;
+      width: 350px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      cursor: grab;
+      user-select: none;
+    }
+
+    .container img:active {
+      cursor: grabbing;
+    }
+
+    .img1 {
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+    }
+
+    .img2 {
+      top: 80px;
+      left: 180px;
+      z-index: 2;
+    }
+
+    .img3 {
+      top: 150px;
+      left: 70px;
+      z-index: 3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <img src="https://picsum.photos/id/10/600/400" alt="Imagem 1" class="img1" draggable="false">
+    <img src="https://picsum.photos/id/20/600/400" alt="Imagem 2" class="img2" draggable="false">
+    <img src="https://picsum.photos/id/30/600/400" alt="Imagem 3" class="img3" draggable="false">
+  </div>
+
+  <script>
+
+    const imagens = document.querySelectorAll(".container img");
+
+    let imagemAtual = null;
+    let offsetX = 0;
+    let offsetY = 0;
+    let maiorZIndex = Math.max(
+      ...Array.from(imagens, img => Number(getComputedStyle(img).zIndex) || 0)
+    );
+
+    imagens.forEach(img => {
+
+      img.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+
+        imagemAtual = img;
+
+        offsetX = e.clientX - img.offsetLeft;
+        offsetY = e.clientY - img.offsetTop;
+
+        // traz a imagem clicada para frente
+        img.style.zIndex = ++maiorZIndex;
+
+      });
+
+    });
+
+    document.addEventListener("mousemove", (e) => {
+
+      if (!imagemAtual) return;
+
+      imagemAtual.style.left =
+        (e.clientX - offsetX) + "px";
+
+      imagemAtual.style.top =
+        (e.clientY - offsetY) + "px";
+
+    });
+
+    document.addEventListener("mouseup", () => {
+
+      imagemAtual = null;
+
+    });
+
+  </script>
+
+</body>
+
+</html>

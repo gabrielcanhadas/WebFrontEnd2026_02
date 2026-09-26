@@ -3,11 +3,11 @@
   Elas podem ser usadas em todos os elementos da página com var().
 */
 :root {
-  --cor-fundo: #f5f5f5;
+  --cor-fundo: #57541b20;
   --cor-texto: #222222;
   --cor-card: #ffffff;
   --cor-borda: #dddddd;
-  --cor-principal: #2563eb;
+  --cor-principal: #fa1d08;
   --cor-principal-hover: #1d4ed8;
   --espacamento: 20px;
   --raio: 10px;

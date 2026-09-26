@@ -1,0 +1,28 @@
+div {
+  border: 10px solid black;
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 10%;
+}
+
+p {
+  margin-bottom: inherit;
+}
+
+.circulo {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(165, 165, 168);
+  border-radius: 50%;
+
+  /* Centraliza o texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  .circulo p {
+  color: white;
+  text-align: center;
+  margin: 0;
+}
