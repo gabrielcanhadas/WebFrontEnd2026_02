@@ -1,0 +1,103 @@
+/* Faz a página ocupar a janela e evita barras de rolagem durante o arraste. */
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.toolbar {
+  position: absolute;
+  z-index: 10000;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: calc(100% - 32px);
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.toolbar label {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.toolbar input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.toolbar:focus-within {
+  outline: 2px solid #2463eb;
+  outline-offset: 2px;
+}
+
+#status-imagens {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Cria a área de referência que ocupa toda a página. */
+.container {
+  /* Torna o container a referência para os elementos com position: absolute. */
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Mantém imagem e alça juntas durante o movimento e o redimensionamento. */
+.imagem-moldura {
+  position: absolute;
+  width: 350px;
+  touch-action: none;
+}
+
+.imagem-moldura img {
+  display: block;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: grab;
+  user-select: none;
+}
+
+.imagem-moldura img:active {
+  cursor: grabbing;
+}
+
+.alca-redimensionamento {
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #2463eb;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+  cursor: nwse-resize;
+  touch-action: none;
+}
+
+.alca-redimensionamento:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+  .toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
