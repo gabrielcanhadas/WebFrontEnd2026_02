@@ -62,8 +62,24 @@ section {
   color: white;
   cursor: pointer;
   border-radius: 6px;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
+
+/*
+:focus-visible
+--------------
+
+É uma pseudo-classe que aplica estilos quando o navegador considera que o usuário precisa ver um indicador de foco.
+
+Diferença entre :focus e :focus-visible:
+----------------------------------------
+
+:focus         - o contorno aparece ao clicar com o mouse e ao navegar pelo teclado.
+:focus-visible - o contorno normalmente aparece apenas quando o foco é obtido por 
+                 navegação via teclado
+*/
 
 .btn:hover,
 .card button:hover {
@@ -107,6 +123,10 @@ section {
   color: white;
 }
 
+.banner .btn {
+  margin: 16px 0 0;
+}
+
 /* Cartões de cursos e botão de ação */
 
 .cards-container {
@@ -136,7 +156,9 @@ section {
   background: #2563eb;
   color: white;
   cursor: pointer;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .card button:active,
@@ -149,7 +171,7 @@ section {
 .estatisticas {
   display: flex;
   gap: 10px;
-  align-items: flex-start;
+  align-items: center;
   background: #e2e8f0;
   border: 1px solid #cbd5e1;
   padding: 20px;
