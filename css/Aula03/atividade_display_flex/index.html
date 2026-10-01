@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Cabeçalho: identidade da página e ação de entrada. -->
+  <header class="header">
+    <div class="logo">💻</div>
+    <h1>Dashboard</h1>
+    <button class="btn">Entrar</button>
+  </header>
+
+  <!-- Navegação principal do dashboard. -->
+  <nav class="menu">
+    <ul>
+      <li>#Home</a></li>
+      <li>#Cursos</a></li>
+      <li>#Professores</a></li>
+      <li>#Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Banner inicial com chamada para conhecer os cursos. -->
+  <section class="banner">
+    <div>
+      <h2>Aprenda Tecnologia com os Melhores Cursos</h2>
+      <p>Desenvolva habilidades em programação, design, banco de dados e muito mais.</p>
+      <button class="btn">Conheça os Cursos</button>
+    </div>
+  </section>
+
+  <!-- ÁREA DE CURSOS -->
+  <section>
+    <h2 class="titulo">Cursos em Destaque</h2>
+
+    <div class="cards-container">
+
+      <div class="card">
+        <h3>HTML5</h3>
+        <p>Estruturação de páginas web.</p>
+        <button>Saiba Mais</button>
+      </div>
+
+      <div class="card">
+        <h3>CSS3</h3>
+        <p>Estilização e responsividade.</p>
+        <button>Saiba Mais</button>
+      </div>
+
+      <div class="card">
+        <h3>JavaScript</h3>
+        <p>Interatividade para websites.</p>
+        <button>Saiba Mais</button>
+      </div>
+
+      <div class="card">
+        <h3>React</h3>
+        <p>Criação de interfaces modernas.</p>
+        <button>Saiba Mais</button>
+      </div>
+
+      <div class="card">
+        <h3>Node.js</h3>
+        <p>Desenvolvimento Back-End.</p>
+        <button>Saiba Mais</button>
+      </div>
+
+      <div class="card">
+        <h3>Banco de Dados</h3>
+        <p>Gerenciamento de informações.</p>
+        <button>Saiba Mais</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ESTATÍSTICAS -->
+  <section>
+    <h2 class="titulo">Estatísticas</h2>
+
+    <div class="estatisticas">
+
+      <!-- flex-grow: ocupa mais espaço -->
+      <div class="bloco grow1">
+        <h3>5000</h3>
+        <p>Alunos</p>
+      </div>
+
+      <!-- flex-grow maior -->
+      <div class="bloco grow2">
+        <h3>120</h3>
+        <p>Cursos</p>
+      </div>
+
+      <!-- flex-shrink -->
+      <div class="bloco shrink">
+        <h3>80</h3>
+        <p>Professores</p>
+      </div>
+
+      <!-- align-self -->
+      <div class="bloco align-self-demo">
+        <h3>95%</h3>
+        <p>Satisfação</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Demonstrações de display; cada trecho code identifica a regra aplicada. -->
+  <section>
+    <h2 class="titulo">Exemplos de Display</h2>
+
+    <h3>Display Inline</h3>
+    <p class="css-note"><code>display: inline;</code></p>
+    <div class="ex-inline">
+      #Link 1</a>
+      #Link 2</a>
+      #Link 3</a>
+    </div>
+
+    <h3>Display Block</h3>
+    <p class="css-note"><code>display: block;</code></p>
+    <div class="ex-block">
+      <span>Span 1</span>
+      <span>Span 2</span>
+      <span>Span 3</span>
+    </div>
+
+    <h3>Display Inline-Block</h3>
+    <p class="css-note"><code>display: inline-block;</code></p>
+    <div class="ex-inline-block">
+      <div>Caixa 1</div>
+      <div>Caixa 2</div>
+      <div>Caixa 3</div>
+    </div>
+
+    <h3>Display None</h3>
+    <p class="css-note"><code>display: none;</code></p>
+    <div class="oculto">
+      Este conteúdo está oculto.
+    </div>
+
+    <!--
+        display:none remove totalmente o elemento da página,
+        sem ocupar espaço no layout.
+        -->
+
+  </section>
+
+  <!-- Demonstrações de flex-direction e orientação dos itens. -->
+  <section>
+    <h2 class="titulo">Flex Direction</h2>
+
+    <h3>row</h3>
+    <p class="css-note"><code>flex-direction: row;</code></p>
+    <div class="demo row">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <h3>column</h3>
+    <p class="css-note"><code>flex-direction: column;</code></p>
+    <div class="demo column">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <h3>row-reverse</h3>
+    <p class="css-note"><code>flex-direction: row-reverse;</code></p>
+    <div class="demo row-reverse">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <h3>column-reverse</h3>
+    <p class="css-note"><code>flex-direction: column-reverse;</code></p>
+    <div class="demo column-reverse">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+  </section>
+
+  <!-- Demonstrações dos valores de justify-content no eixo principal. -->
+  <section>
+    <h2 class="titulo">Justify Content</h2>
+    <p class="css-note"><code>justify-content: flex-start | center | flex-end | space-between | space-around | space-evenly;</code></p>
+
+    <div class="jc flex-start">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+    </div>
+
+    <div class="jc center">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+    </div>
+
+    <div class="jc flex-end">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+    </div>
+
+    <div class="jc space-between">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+    </div>
+
+    <div class="jc space-around">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+    </div>
+
+    <div class="jc space-evenly">
+      <div>A</div>
+      <div>B</div>
+      <div>C</div>
+    </div>
+  </section>
+
+  <!-- Demonstrações dos valores de align-items no eixo transversal. -->
+  <section>
+    <h2 class="titulo">Align Items</h2>
+    <p class="css-note"><code>align-items: flex-start | center | flex-end | stretch;</code></p>
+
+    <div class="align-start ai">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="align-center ai">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="align-end ai">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="align-stretch ai">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+  </section>
+
+  <!-- Demonstração da quebra (wrap) e da ausência de quebra (nowrap). -->
+  <section>
+    <h2 class="titulo">Flex Wrap</h2>
+
+    <h3>nowrap</h3>
+    <p class="css-note"><code>flex-wrap: nowrap;</code></p>
+    <div class="wrap-demo nowrap">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+    <h3>wrap</h3>
+    <p class="css-note"><code>flex-wrap: wrap;</code></p>
+    <div class="wrap-demo wrap">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+  </section>
+
+  <!-- Demonstrações de propriedades aplicadas diretamente a itens flex. -->
+  <section>
+    <h2 class="titulo">Flex Items</h2>
+
+    <!-- flex-grow distribui espaço livre para o item indicado. -->
+    <h3>flex-grow</h3>
+    <p class="css-note"><code>.grow { flex-grow: 1; }</code></p>
+    <div class="flex-items-demo">
+      <div>1</div>
+      <div class="grow">2</div>
+      <div>3</div>
+    </div>
+
+    <!-- flex-shrink controla quanto o item encolhe quando falta espaço. -->
+    <h3>flex-shrink</h3>
+    <p class="css-note"><code>.shrink-item { flex-shrink: 3; }</code></p>
+    <div class="flex-items-demo">
+      <div>1</div>
+      <div class="shrink-item">2</div>
+      <div>3</div>
+    </div>
+
+    <!-- flex-basis define o tamanho inicial do item flex. -->
+    <h3>flex-basis</h3>
+    <p class="css-note"><code>.basis { flex-basis: 200px; }</code></p>
+    <div class="flex-items-demo">
+      <div>1</div>
+      <div class="basis">2</div>
+      <div>3</div>
+    </div>
+
+    <!-- align-self sobrescreve o alinhamento transversal de um item. -->
+    <h3>align-self</h3>
+    <p class="css-note"><code>.self { align-self: flex-end; }</code></p>
+    <div class="flex-items-demo altura">
+      <div>1</div>
+      <div class="self">2</div>
+      <div>3</div>
+    </div>
+
+    <!-- order altera a ordem visual sem mudar a ordem do HTML. -->
+    <h3>order</h3>
+    <p class="css-note"><code>.order { order: -1; }</code></p>
+    <div class="flex-items-demo">
+      <div>1</div>
+      <div class="order">2</div>
+      <div>3</div>
+    </div>
+
+  </section>
+
+  <!-- Rodapé com redes sociais, contato e direitos autorais. -->
+  <footer class="footer">
+    <div>Instagram | Facebook | LinkedIn</div>
+    <div>contato@dashboard.com</div>
+    <div>© 2026 Todos os direitos reservados</div>
+  </footer>
+
+</body>
+
+</html>

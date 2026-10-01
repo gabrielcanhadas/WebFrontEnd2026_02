@@ -1,0 +1,414 @@
+/* 1. BASE: regras gerais e cores padrão da página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  color: #1f2937;
+}
+
+section {
+  padding: 30px;
+}
+
+/* Elementos reutilizados nas seções */
+.titulo {
+  margin-bottom: 20px;
+}
+
+.css-note {
+  margin: 6px 0 10px;
+  color: #475569;
+}
+
+.css-note code {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #e2e8f0;
+  color: #1e293b;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 0.9em;
+}
+
+/* 2. COMPONENTES DA PÁGINA: cabeçalho e botão principal */
+
+.header {
+  display: flex;
+  align-items: center;
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 40px;
+}
+
+.header h1 {
+  margin-left: 10px;
+}
+
+.btn {
+  margin-left: auto;
+  padding: 10px 20px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover,
+.card button:hover {
+  background: #1d4ed8;
+}
+
+.btn:focus-visible,
+.card button:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
+/* Navegação principal */
+
+.menu {
+  background: #c4d5ed;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Banner de apresentação */
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  text-align: center;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  color: white;
+}
+
+/* Cartões de cursos e botão de ação */
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 250px;
+  background: white;
+  color: #1f2937;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+}
+
+.card p {
+  color: #475569;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card button:active,
+.btn:active {
+  background: #1e40af;
+}
+
+/* Cartões de estatísticas e variações de crescimento/alinhamento */
+
+.estatisticas {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  padding: 20px;
+}
+
+.bloco {
+  background: #2563eb;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.grow1 {
+  flex-grow: 1;
+}
+
+.grow2 {
+  flex-grow: 2;
+}
+
+.shrink {
+  flex-shrink: 2;
+}
+
+.align-self-demo {
+  align-self: flex-end;
+}
+
+/* 3. DEMONSTRAÇÕES DE PROPRIEDADES CSS */
+/* display: inline, block, inline-block e none */
+
+.ex-inline a {
+  display: inline;
+  margin-right: 15px;
+}
+
+.ex-block span {
+  display: block;
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.ex-inline-block div {
+  display: inline-block;
+  width: 120px;
+  padding: 20px;
+  background: #2563eb;
+  color: white;
+  margin: 5px;
+}
+
+.oculto {
+  display: none;
+}
+
+/* flex-direction: direção e ordem dos itens */
+
+.demo {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.demo div {
+  background: #2563eb;
+  color: white;
+  padding: 15px;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* justify-content: distribuição no eixo principal */
+
+.jc {
+  display: flex;
+  margin: 15px 0;
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  padding: 10px;
+}
+
+.jc div {
+  padding: 15px;
+  background: #0ea5e9;
+  color: white;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+/* align-items: alinhamento no eixo transversal */
+
+.ai {
+  display: flex;
+  height: 120px;
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  margin: 15px 0;
+}
+
+.ai div {
+  background: #16a34a;
+  color: white;
+  padding: 20px;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+/* flex-wrap: quebra de linha dos itens */
+
+.wrap-demo {
+  display: flex;
+  width: 300px;
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.wrap-demo div {
+  width: 100px;
+  background: #ef4444;
+  color: white;
+  padding: 15px;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+/* Propriedades individuais dos itens flex */
+
+.flex-items-demo {
+  display: flex;
+  gap: 10px;
+  border: 2px solid #ccc;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.flex-items-demo div {
+  background: #7c3aed;
+  color: white;
+  padding: 20px;
+}
+
+/*
+flex-grow:
+faz o item crescer ocupando
+o espaço disponível.
+*/
+.grow {
+  flex-grow: 1;
+}
+
+/*
+flex-shrink:
+permite diminuir mais
+quando faltar espaço.
+*/
+.shrink-item {
+  flex-shrink: 3;
+}
+
+/*
+flex-basis:
+define tamanho inicial
+do item flex.
+*/
+.basis {
+  flex-basis: 200px;
+}
+
+/*
+align-self:
+alinha apenas um item.
+*/
+.altura {
+  height: 150px;
+  align-items: flex-start;
+}
+
+.self {
+  align-self: flex-end;
+}
+
+/*
+order:
+altera a ordem visual
+dos elementos.
+*/
+.order {
+  order: -1;
+}
+
+/* 4. RODAPÉ: informações institucionais */
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
