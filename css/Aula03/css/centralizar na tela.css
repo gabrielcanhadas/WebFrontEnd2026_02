@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: center;
+    /* eixo principal */
+    align-items: center;
+    /* eixo cruzado */
+    height: 100vh;
+}
+
+.item {
+    background: lightblue;
+    padding: 20px;
+}

@@ -1,0 +1,44 @@
+/*
+Layout 4: Baixo/Cima (Main em Cima, Aside em Baixo)
+Este layout é o mais natural, pois segue a ordem do documento HTML.
+style.css (Exemplo 4)
+
+Ponto-chave: Este exemplo demonstra o comportamento padrão do navegador. Elementos de bloco são empilhados verticalmente na ordem em que aparecem no HTML.
+*/
+
+/* Estilos básicos (iguais ao anterior) */
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.main-content {
+    background-color: #ecf0f1;
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: #bdc3c7;
+    padding: 20px;
+}
+
+/* --- Lógica do Layout --- */
+/*
+   Para este layout, não precisamos de Flexbox ou Grid no container,
+   pois os elementos de bloco (<main>, <aside>) já se empilham
+   verticalmente por padrão, seguindo a ordem do HTML.
+*/
+.container {
+    /* Apenas um espaçamento entre eles */
+    display: grid;
+    gap: 20px;
+}
+
+/* Nenhuma regra de posicionamento é necessária! */
+/* .main-content {} */
+/* .sidebar {} */

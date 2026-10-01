@@ -1,0 +1,45 @@
+/*
+Layout 3: Cima/Baixo (Aside em Cima, Main em Baixo)
+Um layout menos comum, mas que pode ser usado para destacar informações contextuais ou anúncios antes do conteúdo principal.
+style.css (Exemplo 3)
+
+Ponto-chave: Com display: grid, podemos atribuir elementos a "células" específicas. Aqui, estamos dizendo explicitamente em qual linha cada um deve ficar.
+*/
+
+/* Estilos básicos (iguais ao anterior) */
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.main-content {
+    background-color: #ecf0f1;
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: #bdc3c7;
+    padding: 20px;
+}
+
+/* --- Lógica do Layout com Grid --- */
+.container {
+    display: grid;
+    /* Grid é ótimo para controle de linhas e colunas */
+    gap: 20px;
+}
+
+.main-content {
+    grid-row: 2;
+    /* Coloca o main na segunda linha da grade */
+}
+
+.sidebar {
+    grid-row: 1;
+    /* Coloca o aside na primeira linha da grade */
+}

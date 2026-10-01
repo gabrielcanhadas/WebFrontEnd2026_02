@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    /* espaço entre */
+}
+
+.item {
+    background: lightblue;
+    padding: 20px;
+}
+
+/*
+flex-start → itens grudados à esquerda
+flex-end → itens grudados à direita
+center → centraliza
+space-between → espaço apenas entre os itens
+space-around → espaço em volta de cada item
+space-evenly → espaço igual em tudo
+*/

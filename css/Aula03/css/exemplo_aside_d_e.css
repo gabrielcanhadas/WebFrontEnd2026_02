@@ -1,0 +1,44 @@
+/*
+Layout 1: Direita/Esquerda (Main à Esquerda, Aside à Direita)
+Este é o layout mais clássico de blog ou site de notícias.
+style.css (Exemplo 1)
+*/
+
+/* Estilos básicos para visualização */
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.main-content {
+    background-color: #ecf0f1;
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: #bdc3c7;
+    padding: 20px;
+}
+
+/* --- Lógica do Layout com Flexbox --- */
+.container {
+    display: flex;
+    gap: 20px;
+    /* Espaço entre as colunas */
+}
+
+.main-content {
+    flex: 2;
+    /* Ocupa 2/3 do espaço */
+}
+
+.sidebar {
+    flex: 1;
+    /* Ocupa 1/3 do espaço */
+    /* A ordem visual padrão (1, 2) já coloca o aside à direita */
+}

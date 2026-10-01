@@ -1,23 +1,34 @@
 <html>
+
 <head>
-<style>
-#oculto{
-  visibility:hidden;
-}  
+  <title>Exemplo hidden.html</title>
+  <style>
+    #oculto {
+      visibility: hidden;
+    }
 
-li {
-  display: inline;
-}
-</style>
+    li {
+      display: inline;
+    }
+
+    span {
+      background-color: yellow;
+      font-style: italic;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
+
 <body>
-<p>Exemplo de alteração da exibição de uma lista:</p>
-<ul>
-  <li><a href="#">Item 1</a></li>
-  <li id="oculto"><a href="#">Item 2</a></li>
-  <li><a href="#">Item 3</a></li>
-</ul>
+  <h3>Perceba que o navegador renderizou o documento com <span><code>none</code></span> como se o item 2 não estivesse
+    nele. Caso o objetivo seja manter o espaço do elemento oculto, a opção a ser
+    utilizada é a propriedade visibility, com valor hidden.</h3>
+  <p>Exemplo de alteração da exibição de uma lista:</p>
+  <ul>
+    <li><a href="#">Item 1</a></li>
+    <li id="oculto"><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+  </ul>
 </body>
+
 </html>
-
-

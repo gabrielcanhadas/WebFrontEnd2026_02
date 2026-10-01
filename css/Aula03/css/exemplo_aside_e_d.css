@@ -1,0 +1,46 @@
+/*
+Layout 2: Esquerda/Direita (Aside à Esquerda, Main à Direita)
+Muito comum em painéis de administração e documentações.
+style.css (Exemplo 2)
+
+Ponto-chave: A propriedade order do Flexbox nos permite reordenar os elementos visualmente sem tocar no HTML.
+*/
+
+/* Estilos básicos (iguais ao anterior) */
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.main-content {
+    background-color: #ecf0f1;
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: #bdc3c7;
+    padding: 20px;
+}
+
+/* --- Lógica do Layout com Flexbox --- */
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.main-content {
+    flex: 2;
+    order: 2;
+    /* Manda o conteúdo principal para a segunda posição visual */
+}
+
+.sidebar {
+    flex: 1;
+    order: 1;
+    /* Traz o aside para a primeira posição visual */
+}

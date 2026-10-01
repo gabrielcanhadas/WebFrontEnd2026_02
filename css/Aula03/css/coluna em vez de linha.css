@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    /* muda de linha para coluna */
+}
+
+.item {
+    background: lightblue;
+    padding: 20px;
+}

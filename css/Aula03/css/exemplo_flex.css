@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.exemplo {
+  margin-bottom: 50px;
+}
+
+.container {
+  display: flex;
+  background: #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  min-height: 50px;
+  border-radius: 8px;
+}
+
+/* ===== FLEX-DIRECTION ===== */
+.flex-direction.row {
+  flex-direction: row;
+}
+.flex-direction.column {
+  flex-direction: column;
+}
+
+/* ===== JUSTIFY-CONTENT ===== */
+.justify-content.flex-start {
+  justify-content: flex-start;
+}
+.justify-content.center {
+  justify-content: center;
+}
+.justify-content.space-between {
+  justify-content: space-between;
+}
+.justify-content.space-around {
+  justify-content: space-around;
+}
+.justify-content.space-evenly {
+  justify-content: space-evenly;
+}
+
+/* ===== ALIGN-ITEMS ===== */
+.align-items.flex-start {
+  align-items: flex-start;
+}
+.align-items.center {
+  align-items: center;
+}
+.align-items.flex-end {
+  align-items: flex-end;
+}
+.align-items.stretch {
+  align-items: stretch;
+}
+.align-items.baseline {
+  align-items: baseline;
+}
+
+/* ===== ITENS ===== */
+.item {
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+/* Exemplo com altura diferente */
+.item.tall {
+  height: 70px;
+}
+
+/* ===== FLEX-GROW ===== */
+.flex-grow-example .item {
+  background: #2196f3;
+}

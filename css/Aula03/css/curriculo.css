@@ -1,0 +1,130 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.curriculo-container {
+    display: flex;
+    /* Transforma o elemento em um contêiner flexível */
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Coluna da esquerda */
+.perfil-info {
+    flex: 1;
+    /* Ocupa 1 parte do espaço flexível disponível */
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    /* Organiza os elementos em coluna */
+    align-items: center;
+    /* Centraliza o conteúdo horizontalmente */
+    text-align: center;
+}
+
+.perfil-info h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #fff;
+}
+
+.perfil-info h2 {
+    font-size: 1.2em;
+    margin-top: 30px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.perfil-info p {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.perfil-info ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.perfil-info li {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.perfil-info a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+/* Coluna da direita */
+.main-content {
+    flex: 2;
+    /* Ocupa 2 partes do espaço flexível disponível */
+    padding: 40px 50px;
+}
+
+.main-content section {
+    margin-bottom: 30px;
+}
+
+.main-content h2 {
+    font-size: 1.5em;
+    color: #2c3e50;
+    border-bottom: 2px solid #bdc3c7;
+    padding-bottom: 5px;
+}
+
+.item-experiencia,
+.item-educacao {
+    margin-bottom: 20px;
+}
+
+.item-experiencia h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #2980b9;
+}
+
+.periodo {
+    font-style: italic;
+    color: #7f8c8d;
+    margin: 5px 0;
+}
+
+.item-experiencia ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .curriculo-container {
+        flex-direction: column;
+        /* Em telas menores, as colunas se empilham */
+    }
+
+    .perfil-info {
+        padding: 30px 20px;
+        border-bottom: 5px solid #2c3e50;
+    }
+
+    .perfil-info h1 {
+        font-size: 1.5em;
+    }
+
+    .main-content {
+        padding: 30px 20px;
+    }
+}

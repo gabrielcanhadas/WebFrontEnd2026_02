@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+}
+
+.item {
+    background: lightblue;
+    padding: 20px;
+}
