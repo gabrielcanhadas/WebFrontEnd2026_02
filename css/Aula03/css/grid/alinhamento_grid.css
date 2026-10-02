@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    background: #f3f7f4;
+    color: #1c2b22;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.exemplo {
+    margin: 32px 0;
+}
+
+.grade {
+    display: grid;
+    gap: 12px;
+    padding: 12px;
+    background: #dce8de;
+    border-radius: 10px;
+}
+
+.itens {
+    min-height: 190px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 70px);
+    justify-items: center;
+    align-items: center;
+}
+
+.itens .inicio {
+    justify-self: start;
+    align-self: start;
+}
+
+.itens .fim {
+    justify-self: end;
+    align-self: end;
+}
+
+.itens .esticar {
+    justify-self: stretch;
+    align-self: stretch;
+}
+
+.place {
+    min-height: 180px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+
+.trilhas {
+    min-height: 240px;
+    grid-template-columns: repeat(2, 120px);
+    grid-template-rows: repeat(2, 60px);
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+
+.individual {
+    min-height: 150px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100px;
+}
+
+.item {
+    display: grid;
+    min-width: 90px;
+    min-height: 48px;
+    place-items: center;
+    padding: 12px;
+    background: #287c4a;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.destaque {
+    place-self: center;
+    background: #bd5b37;
+}

@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    background: #f4f6f8;
+    color: #1c2733;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pagina {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr) 200px;
+    grid-template-areas:
+        "cabecalho cabecalho cabecalho"
+        "navegacao conteudo lateral"
+        "rodape rodape rodape";
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.pagina > * {
+    padding: 24px;
+    border-radius: 10px;
+}
+
+.cabecalho {
+    grid-area: cabecalho;
+    background: #245b8f;
+    color: white;
+}
+
+.navegacao {
+    grid-area: navegacao;
+    background: #d8e6f2;
+}
+
+.lateral {
+    grid-area: lateral;
+    background: #f3dfbf;
+}
+
+.conteudo {
+    grid-area: conteudo;
+    min-height: 240px;
+    background: white;
+}
+
+.rodape {
+    grid-area: rodape;
+    background: #273b4f;
+    color: white;
+}
+
+@media (max-width: 720px) {
+    .pagina {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+            "cabecalho cabecalho"
+            "navegacao navegacao"
+            "conteudo lateral"
+            "rodape rodape";
+    }
+}
+
+@media (max-width: 480px) {
+    .pagina {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "cabecalho"
+            "navegacao"
+            "conteudo"
+            "lateral"
+            "rodape";
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid: grade responsiva</title>
+    <link rel="stylesheet" href="../../css/grid/grade_responsiva.css">
+</head>
+
+<body>
+    <main>
+        <h1>Grade responsiva de cartões</h1>
+        <p>As colunas se ajustam ao espaço disponível, sem precisar definir uma coluna por dispositivo.</p>
+
+        <section class="cartoes" aria-label="Exemplos de cartões">
+            <article class="cartao">
+                <h2>Layout fluido</h2>
+                <p><code>repeat(auto-fit, minmax(...))</code> cria quantas colunas couberem.</p>
+            </article>
+            <article class="cartao">
+                <h2>Largura mínima</h2>
+                <p>O cartão mantém um tamanho legível e cresce quando há espaço disponível.</p>
+            </article>
+            <article class="cartao">
+                <h2>Uma coluna especial</h2>
+                <p>O destaque pode ocupar mais trilhas com <code>grid-column: span 2</code>.</p>
+            </article>
+            <article class="cartao destaque">
+                <h2>Destaque</h2>
+                <p>Este cartão ocupa duas colunas em telas largas e volta ao fluxo normal em telas estreitas.</p>
+            </article>
+            <article class="cartao">
+                <h2>Sem largura fixa</h2>
+                <p>Use unidades flexíveis e limites mínimos para evitar overflow.</p>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>

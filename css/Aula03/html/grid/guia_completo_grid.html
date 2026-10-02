@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia completo de CSS Grid</title>
+    <link rel="stylesheet" href="../../css/grid/guia_completo_grid.css">
+</head>
+
+<body>
+    <main>
+        <h1>Guia completo de CSS Grid</h1>
+        <p>Um resumo visual das ferramentas mais usadas para construir layouts bidimensionais.</p>
+
+        <section class="exemplo">
+            <h2>1. Trilhas, repetição e espaçamento</h2>
+            <p><code>grid-template-columns</code>, <code>grid-template-rows</code>, <code>fr</code>, <code>repeat()</code> e <code>gap</code>.</p>
+            <div class="grade grade-trilhas">
+                <div class="item">1fr</div>
+                <div class="item">2fr</div>
+                <div class="item">1fr</div>
+                <div class="item">Linha automática</div>
+                <div class="item">Linha automática</div>
+                <div class="item">Linha automática</div>
+            </div>
+        </section>
+
+        <section class="exemplo">
+            <h2>2. Posicionamento explícito</h2>
+            <p>Linhas numeradas, intervalos com <code>span</code>, linhas nomeadas e a abreviação <code>grid-area</code>.</p>
+            <div class="grade grade-posicionada">
+                <div class="item posicao-cabecalho">Colunas 1 a 4</div>
+                <div class="item posicao-lateral">Duas linhas</div>
+                <div class="item posicao-destaque">grid-column: span 2</div>
+                <div class="item posicao-rodape">grid-area</div>
+            </div>
+        </section>
+
+        <section class="exemplo">
+            <h2>3. Áreas nomeadas e responsividade</h2>
+            <div class="pagina">
+                <header class="area-cabecalho">Cabeçalho</header>
+                <nav class="area-menu">Menu</nav>
+                <article class="area-conteudo">Conteúdo</article>
+                <aside class="area-lateral">Lateral</aside>
+                <footer class="area-rodape">Rodapé</footer>
+            </div>
+        </section>
+
+        <section class="exemplo">
+            <h2>4. Fluxo automático e trilhas implícitas</h2>
+            <p><code>grid-auto-flow</code>, <code>grid-auto-rows</code> e <code>grid-auto-columns</code>.</p>
+            <div class="grade grade-fluxo">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item fluxo-grande">Ocupa duas colunas</div>
+                <div class="item">Item 4</div>
+                <div class="item">Item 5</div>
+            </div>
+        </section>
+
+        <section class="exemplo">
+            <h2>5. Itens, trilhas e alinhamento</h2>
+            <p><code>justify-items</code>, <code>align-items</code>, <code>place-items</code>, <code>justify-content</code>, <code>align-content</code> e <code>place-self</code>.</p>
+            <div class="grade grade-alinhamento">
+                <div class="item">Padrão</div>
+                <div class="item alinhado">place-self: center</div>
+                <div class="item">Padrão</div>
+                <div class="item">Padrão</div>
+            </div>
+        </section>
+
+        <section class="exemplo">
+            <h2>6. Grades responsivas sem breakpoints para cada coluna</h2>
+            <p>Combine <code>auto-fit</code> ou <code>auto-fill</code> com <code>minmax()</code> para adaptar o número de colunas.</p>
+            <div class="grade grade-auto">
+                <div class="item">auto-fit</div>
+                <div class="item">minmax()</div>
+                <div class="item">colunas flexíveis</div>
+                <div class="item">largura mínima</div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

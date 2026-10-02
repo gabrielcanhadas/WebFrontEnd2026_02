@@ -1,17 +1,24 @@
+<!--exemplo flex.html-->
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <title>Guia Completo de Flexbox</title>
-    <link rel="stylesheet" href="../css/visual completo Flexbox.css">
+    <title>Guia Flexbox Visual</title>
+    <link rel="stylesheet" href="../../css/flex/exemplo_flex.css">
 </head>
 
 <body>
 
-    <h1 style="text-align:center;">Guia Completo de Flexbox</h1>
+    <h1 style="text-align:center;">Guia Prático de Flexbox</h1>
+    <ul>
+        <li><strong>Flex-direction:</strong> itens lado a lado (row) e empilhados (column)</li>
+        <li><strong>Justify-content:</strong> mostra diferentes alinhamentos no eixo principal</li>
+        <li><strong>Align-items:</strong> mostra alinhamento vertical (topo, centro, esticados)</li>
+        <li><strong>Flex-grow:</strong> itens crescem proporcionalmente ao espaço disponível</li>
+    </ul>
 
-    <!-- ===== FLEX-DIRECTION ===== -->
+    <!-- EXEMPLO 1: flex-direction -->
     <section class="exemplo">
         <h2>flex-direction</h2>
         <div class="container flex-direction row">
@@ -32,18 +39,10 @@
         </div>
     </section>
 
-    <!-- ===== JUSTIFY-CONTENT ===== -->
+    <!-- EXEMPLO 2: justify-content -->
     <section class="exemplo">
         <h2>justify-content</h2>
         <div class="container justify-content flex-start">
-            <div class="item">A</div>
-            <div class="item">B</div>
-            <div class="item">C</div>
-            <div class="item">D</div>
-            <div class="item">E</div>
-            <div class="item">F</div>
-        </div>
-        <div class="container justify-content center">
             <div class="item">A</div>
             <div class="item">B</div>
             <div class="item">C</div>
@@ -59,9 +58,17 @@
             <div class="item">E</div>
             <div class="item">F</div>
         </div>
+        <div class="container justify-content center">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+            <div class="item">F</div>
+        </div>
     </section>
 
-    <!-- ===== ALIGN-ITEMS ===== -->
+    <!-- EXEMPLO 3: align-items -->
     <section class="exemplo">
         <h2>align-items</h2>
         <div class="container align-items flex-start" style="height:100px;">
@@ -90,34 +97,16 @@
         </div>
     </section>
 
-    <!-- ===== ORDER ===== -->
+    <!-- EXEMPLO 4: flex-grow / flex-shrink / flex-basis -->
     <section class="exemplo">
-        <h2>order</h2>
-        <div class="container order-example">
-            <div class="item" style="order:3">1</div>
-            <div class="item" style="order:1">2</div>
-            <div class="item" style="order:2">3</div>
-        </div>
-    </section>
-
-    <!-- ===== FLEX-GROW / FLEX-SHRINK / FLEX-BASIS ===== -->
-    <section class="exemplo">
-        <h2>flex-grow / flex-shrink / flex-basis</h2>
-        <div class="container flex-example">
-            <div class="item" style="flex:1 1 100px;">1</div>
-            <div class="item" style="flex:2 1 100px;">2</div>
-            <div class="item" style="flex:1 1 100px;">3</div>
-        </div>
-    </section>
-
-    <!-- ===== ALIGN-SELF ===== -->
-    <section class="exemplo">
-        <h2>align-self</h2>
-        <div class="container align-items flex-start" style="height:100px;">
-            <div class="item" style="align-self:flex-start;">A</div>
-            <div class="item" style="align-self:center;">B</div>
-            <div class="item" style="align-self:flex-end;">C</div>
-            <div class="item">D</div>
+        <h2>flex-grow, flex-shrink e flex-basis</h2>
+        <div class="container flex-grow-example">
+            <div class="item" style="flex:1;">1</div>
+            <div class="item" style="flex:1;">1</div>
+            <div class="item" style="flex:2;">2</div>
+            <div class="item" style="flex:2;">2</div>
+            <div class="item" style="flex:3;">3</div>
+            <div class="item" style="flex:6;">6</div>
         </div>
     </section>
 

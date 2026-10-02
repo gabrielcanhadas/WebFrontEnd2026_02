@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid: posicionamento dos itens</title>
+    <link rel="stylesheet" href="../../css/grid/posicionamento_itens.css">
+</head>
+
+<body>
+    <main>
+        <h1>Posicionamento dos itens</h1>
+        <p>As linhas do Grid permitem posicionar itens, ocupar intervalos e sobrepor áreas.</p>
+
+        <section class="exemplo">
+            <h2>Linhas numeradas e span</h2>
+            <div class="grade linhas">
+                <div class="item cabecalho">grid-column: 1 / 4</div>
+                <div class="item lateral">grid-row: 2 / 4</div>
+                <div class="item principal">grid-column: span 2</div>
+                <div class="item detalhe">grid-area: 3 / 3 / 4 / 5</div>
+                <div class="item rodape">Posicionado pelas linhas</div>
+            </div>
+        </section>
+
+        <section class="exemplo">
+            <h2>Linhas nomeadas</h2>
+            <div class="grade nomeadas">
+                <div class="item conteudo">Entre as linhas nomeadas</div>
+                <div class="item nota">Coluna lateral</div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

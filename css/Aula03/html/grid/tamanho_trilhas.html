@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid: dimensionamento de trilhas</title>
+    <link rel="stylesheet" href="../../css/grid/tamanho_trilhas.css">
+</head>
+
+<body>
+    <main>
+        <h1>Dimensionamento de trilhas</h1>
+        <p>Compare unidades flexíveis, conteúdo intrínseco e limites mínimos e máximos.</p>
+
+        <section class="exemplo">
+            <h2>fr: divisão do espaço disponível</h2>
+            <div class="grade fracoes">
+                <div class="item">1fr</div>
+                <div class="item">2fr</div>
+                <div class="item">1fr</div>
+            </div>
+        </section>
+
+        <section class="exemplo">
+            <h2>min-content, max-content e minmax()</h2>
+            <div class="grade conteudo">
+                <div class="item">min-content: este texto quebra em várias linhas</div>
+                <div class="item">max-content: largura baseada no conteúdo</div>
+                <div class="item">minmax(140px, 1fr)</div>
+            </div>
+        </section>
+
+        <section class="exemplo">
+            <h2>repeat(), auto-fit e fit-content()</h2>
+            <div class="grade ajuste">
+                <div class="item">Cartão 1</div>
+                <div class="item">Cartão 2</div>
+                <div class="item">Cartão 3</div>
+                <div class="item">Cartão 4</div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

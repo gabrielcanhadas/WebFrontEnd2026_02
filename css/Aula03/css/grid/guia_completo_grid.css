@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    background: #f4f6f8;
+    color: #1c2733;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.exemplo {
+    margin: 36px 0;
+}
+
+.grade {
+    display: grid;
+    gap: 12px;
+    padding: 12px;
+    background: #dce5ee;
+    border-radius: 10px;
+}
+
+.item {
+    display: grid;
+    min-height: 70px;
+    place-items: center;
+    padding: 12px;
+    background: #28659b;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grade-trilhas {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(70px, auto);
+    gap: 16px 10px;
+}
+
+.grade-posicionada {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(70px, auto));
+}
+
+.posicao-cabecalho {
+    grid-column: 1 / -1;
+    background: #28659b;
+}
+
+.posicao-lateral {
+    grid-row: 2 / span 2;
+    background: #39806d;
+}
+
+.posicao-destaque {
+    grid-column: span 2;
+    background: #af673b;
+}
+
+.posicao-rodape {
+    grid-area: 3 / 3 / 4 / 5;
+    background: #8055a2;
+}
+
+.pagina {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr) 180px;
+    grid-template-areas:
+        "cabecalho cabecalho cabecalho"
+        "menu conteudo lateral"
+        "rodape rodape rodape";
+    gap: 10px;
+}
+
+.pagina > * {
+    padding: 18px;
+    border-radius: 8px;
+    background: #dce5ee;
+}
+
+.area-cabecalho {
+    grid-area: cabecalho;
+    background: #28659b;
+    color: white;
+}
+
+.area-menu {
+    grid-area: menu;
+}
+
+.area-conteudo {
+    grid-area: conteudo;
+    min-height: 130px;
+    background: white;
+}
+
+.area-lateral {
+    grid-area: lateral;
+}
+
+.area-rodape {
+    grid-area: rodape;
+    background: #33495e;
+    color: white;
+}
+
+.grade-fluxo {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-flow: row dense;
+    grid-auto-rows: minmax(70px, auto);
+}
+
+.fluxo-grande {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: #af673b;
+}
+
+.grade-alinhamento {
+    min-height: 230px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 70px);
+    place-items: center;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+
+.alinhado {
+    place-self: end start;
+    background: #39806d;
+}
+
+.grade-auto {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+}
+
+@media (max-width: 700px) {
+    .pagina {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "cabecalho cabecalho"
+            "menu menu"
+            "conteudo lateral"
+            "rodape rodape";
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    .pagina {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "cabecalho"
+            "menu"
+            "conteudo"
+            "lateral"
+            "rodape";
+    }
+
+    .grade-trilhas,
+    .grade-posicionada {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .posicao-cabecalho,
+    .posicao-destaque,
+    .posicao-rodape {
+        grid-column: 1 / -1;
+    }
+}

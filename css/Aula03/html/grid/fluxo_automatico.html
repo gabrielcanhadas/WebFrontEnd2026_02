@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid: fluxo automático</title>
+    <link rel="stylesheet" href="../../css/grid/fluxo_automatico.css">
+</head>
+
+<body>
+    <main>
+        <h1>Fluxo automático e trilhas implícitas</h1>
+        <p>Itens sem posição explícita são distribuídos automaticamente pelo Grid.</p>
+
+        <section class="exemplo">
+            <h2>grid-auto-flow: row</h2>
+            <div class="grade em-linhas">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item destaque">Ocupa 2 colunas</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+            </div>
+        </section>
+
+        <section class="exemplo">
+            <h2>grid-auto-flow: column</h2>
+            <div class="grade em-colunas">
+                <div class="item">A</div>
+                <div class="item">B</div>
+                <div class="item">C</div>
+                <div class="item">D</div>
+                <div class="item">E</div>
+                <div class="item">F</div>
+            </div>
+        </section>
+
+        <section class="exemplo">
+            <h2>grid-auto-flow: row dense</h2>
+            <div class="grade denso">
+                <div class="item grande">Item grande</div>
+                <div class="item">Item</div>
+                <div class="item alto">Item alto</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

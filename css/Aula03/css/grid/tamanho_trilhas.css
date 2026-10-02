@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    background: #f7f5f1;
+    color: #26231f;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.exemplo {
+    margin: 32px 0;
+}
+
+.grade {
+    display: grid;
+    gap: 12px;
+    padding: 12px;
+    background: #e7e1d8;
+    border-radius: 10px;
+}
+
+.fracoes {
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.conteudo {
+    grid-template-columns: min-content max-content minmax(140px, 1fr);
+    overflow-x: auto;
+}
+
+.ajuste {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+}
+
+.item {
+    min-height: 75px;
+    padding: 16px;
+    background: #a34d2c;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+.conteudo .item {
+    overflow-wrap: anywhere;
+}
