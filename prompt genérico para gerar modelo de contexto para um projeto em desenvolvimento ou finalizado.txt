@@ -1,0 +1,614 @@
+PROMPT — GERAÇÃO DE CONTEXTO PARA PROJETO EXISTENTE
+
+Você deverá analisar um projeto de software que já está sendo
+desenvolvido ou que já foi concluído, mas que não possui documentação
+adequada para explicar sua finalidade, funcionamento, organização e
+decisões de implementação.
+
+O único material disponível poderá ser:
+
+- estrutura de diretórios;
+- arquivos HTML;
+- arquivos CSS;
+- arquivos JavaScript;
+- arquivos JSON;
+- arquivos de configuração;
+- imagens e outros recursos utilizados pelo projeto;
+- outros arquivos existentes no projeto.
+
+A estrutura de diretórios NÃO é padronizada e pode ser diferente em
+cada projeto.
+
+Sua tarefa é analisar o projeto existente e criar um documento
+chamado:
+
+CONTEXTO_PROJETO.md
+
+Esse documento deverá servir como documentação de referência para uma
+pessoa que não participou do desenvolvimento original e precisa
+entender o que foi criado antes de realizar manutenção, correções,
+evoluções ou continuidade do projeto.
+
+==================================================
+1. REGRA FUNDAMENTAL
+==================================================
+
+NÃO invente informações sobre o projeto.
+
+Toda informação apresentada na documentação deve estar baseada no que
+pode ser identificado nos arquivos analisados.
+
+Quando uma informação não puder ser determinada com segurança a partir
+dos arquivos disponíveis:
+
+- não invente;
+- não presuma;
+- não atribua uma finalidade que não possa ser comprovada;
+- indique claramente que a informação não pôde ser determinada.
+
+Diferencie claramente:
+
+- informação identificada diretamente nos arquivos;
+- interpretação necessária para explicar o funcionamento;
+- informação que não pôde ser determinada.
+
+Não altere o código do projeto.
+
+Não reorganize os arquivos.
+
+Não crie funcionalidades.
+
+Não corrija problemas do projeto durante esta tarefa.
+
+O objetivo desta tarefa é DOCUMENTAR o que existe.
+
+==================================================
+2. PRIMEIRA ETAPA — INVENTÁRIO DO PROJETO
+==================================================
+
+Antes de escrever a documentação, analise a estrutura completa de
+diretórios e arquivos disponibilizados.
+
+Identifique:
+
+- diretórios existentes;
+- arquivos existentes;
+- extensão dos arquivos;
+- arquivos HTML;
+- arquivos CSS;
+- arquivos JavaScript;
+- arquivos JSON;
+- arquivos de configuração;
+- imagens;
+- fontes;
+- bibliotecas;
+- outros recursos relevantes.
+
+Não presuma que exista uma estrutura específica.
+
+Não presuma que exista, por exemplo:
+
+- src;
+- public;
+- assets;
+- css;
+- js;
+- pages;
+- components;
+- backend;
+- frontend.
+
+Utilize os nomes e diretórios que realmente existirem no projeto.
+
+Apresente a estrutura encontrada em formato de árvore.
+
+Exemplo:
+
+PROJETO/
+├── arquivo.html
+├── css/
+│   └── estilo.css
+├── js/
+│   └── script.js
+└── imagens/
+    └── exemplo.png
+
+O exemplo acima é apenas ilustrativo.
+
+Utilize exclusivamente a estrutura real encontrada no projeto.
+
+==================================================
+3. IDENTIFICAÇÃO DA FINALIDADE DO PROJETO
+==================================================
+
+Analise os arquivos para determinar qual parece ser a finalidade do
+projeto.
+
+Considere evidências como:
+
+- textos apresentados nas páginas;
+- títulos;
+- menus;
+- formulários;
+- botões;
+- nomes de funções;
+- nomes de variáveis;
+- nomes de arquivos;
+- classes CSS;
+- IDs HTML;
+- eventos JavaScript;
+- chamadas entre arquivos;
+- dados manipulados;
+- imagens utilizadas;
+- URLs;
+- APIs;
+- armazenamento local;
+- mensagens exibidas ao usuário.
+
+Explique qual é a finalidade identificada e quais evidências presentes
+no código permitem chegar a essa conclusão.
+
+Se a finalidade não puder ser determinada completamente, explique
+somente o que puder ser identificado.
+
+==================================================
+4. VISÃO GERAL DO SISTEMA
+==================================================
+
+Descreva o funcionamento geral do projeto de maneira que uma pessoa
+que nunca viu o código consiga compreender a aplicação.
+
+Explique:
+
+- o que o usuário consegue fazer;
+- quais telas ou páginas existem;
+- quais informações são apresentadas;
+- quais informações podem ser inseridas;
+- quais ações podem ser executadas;
+- quais resultados são produzidos;
+- como as partes do projeto se relacionam.
+
+Quando possível, apresente o fluxo de utilização.
+
+Exemplo:
+
+Usuário
+   ↓
+Página HTML
+   ↓
+Interação com formulário
+   ↓
+JavaScript
+   ↓
+Processamento dos dados
+   ↓
+Atualização da interface
+
+O fluxo deverá representar o projeto real e não um modelo genérico.
+
+==================================================
+5. ESTRUTURA E RESPONSABILIDADE DOS ARQUIVOS
+==================================================
+
+Para cada arquivo relevante, explique:
+
+- finalidade;
+- responsabilidade;
+- relação com outros arquivos;
+- principais elementos existentes;
+- funções importantes;
+- dados manipulados;
+- eventos associados;
+- dependências identificadas.
+
+Não é necessário explicar literalmente cada linha do código.
+
+Priorize a compreensão da responsabilidade de cada arquivo.
+
+Quando houver muitos arquivos semelhantes, agrupe-os de forma
+organizada, mas não omita arquivos importantes.
+
+==================================================
+6. HTML
+==================================================
+
+Analise os arquivos HTML e documente:
+
+- estrutura das páginas;
+- elementos principais;
+- seções;
+- formulários;
+- campos;
+- botões;
+- links;
+- menus;
+- tabelas;
+- elementos semânticos;
+- IDs;
+- classes;
+- arquivos CSS associados;
+- arquivos JavaScript associados.
+
+Explique também como os elementos HTML são utilizados pelo JavaScript
+quando isso puder ser identificado.
+
+==================================================
+7. CSS
+==================================================
+
+Analise os arquivos CSS e documente:
+
+- organização dos estilos;
+- principais classes;
+- IDs utilizados;
+- estilos globais;
+- layout;
+- cores;
+- tipografia;
+- espaçamentos;
+- posicionamento;
+- Flexbox;
+- CSS Grid;
+- responsividade;
+- media queries;
+- estados como hover, focus etc.;
+- componentes visuais identificados.
+
+Explique a relação entre os arquivos CSS e os elementos HTML.
+
+Não apenas liste propriedades CSS.
+
+Explique a função que os principais estilos exercem na interface.
+
+==================================================
+8. JAVASCRIPT
+==================================================
+
+Analise os arquivos JavaScript e documente:
+
+- funções existentes;
+- variáveis importantes;
+- constantes;
+- eventos;
+- manipulação do DOM;
+- validações;
+- cálculos;
+- alterações na interface;
+- armazenamento de dados;
+- chamadas HTTP;
+- consumo de APIs;
+- manipulação de formulários;
+- geração dinâmica de elementos;
+- comunicação entre arquivos;
+- bibliotecas utilizadas.
+
+Para funções importantes, explique:
+
+- finalidade;
+- dados recebidos;
+- processamento realizado;
+- resultado produzido.
+
+Não reproduza grandes trechos de código.
+
+==================================================
+9. FLUXO DOS DADOS
+==================================================
+
+Identifique como os dados percorrem o sistema.
+
+Por exemplo:
+
+Entrada do usuário
+        ↓
+Formulário HTML
+        ↓
+JavaScript
+        ↓
+Validação
+        ↓
+Processamento
+        ↓
+Armazenamento/API
+        ↓
+Resultado
+        ↓
+Interface
+
+Adapte o fluxo ao funcionamento real identificado no projeto.
+
+Se não existir persistência ou comunicação externa, deixe isso claro.
+
+==================================================
+10. DEPENDÊNCIAS E TECNOLOGIAS
+==================================================
+
+Identifique, somente quando houver evidências nos arquivos:
+
+- HTML;
+- CSS;
+- JavaScript;
+- bibliotecas;
+- frameworks;
+- APIs;
+- bibliotecas externas;
+- CDNs;
+- fontes externas;
+- plugins;
+- ferramentas;
+- formatos de dados.
+
+Explique onde cada tecnologia é utilizada.
+
+Não declare uma tecnologia apenas porque ela seria comum para aquele
+tipo de projeto.
+
+==================================================
+11. ARMAZENAMENTO E PERSISTÊNCIA
+==================================================
+
+Verifique se o projeto utiliza:
+
+- LocalStorage;
+- SessionStorage;
+- cookies;
+- IndexedDB;
+- arquivos JSON;
+- banco de dados;
+- APIs externas;
+- outros mecanismos de persistência.
+
+Se houver, explique como os dados são armazenados e recuperados.
+
+Se não houver evidências de persistência, registre essa informação.
+
+==================================================
+12. INTERAÇÃO ENTRE COMPONENTES
+==================================================
+
+Identifique as relações existentes entre:
+
+- HTML;
+- CSS;
+- JavaScript;
+- imagens;
+- bibliotecas;
+- APIs;
+- outros recursos.
+
+Explique quais arquivos dependem de quais outros arquivos.
+
+Quando possível, apresente uma representação simplificada:
+
+HTML
+ ├── CSS
+ └── JavaScript
+       ├── arquivo.js
+       └── biblioteca externa
+
+A representação deve corresponder ao projeto real.
+
+==================================================
+13. FUNCIONALIDADES IDENTIFICADAS
+==================================================
+
+Liste as funcionalidades que podem ser comprovadas pela análise do
+código.
+
+Para cada funcionalidade, explique:
+
+- o que ela faz;
+- onde está implementada;
+- quais arquivos participam;
+- quais dados utiliza;
+- qual resultado produz.
+
+Não classifique funcionalidades como existentes se elas apenas forem
+sugeridas por nomes de arquivos ou comentários, mas não estiverem
+implementadas.
+
+==================================================
+14. REGRAS DE NEGÓCIO
+==================================================
+
+Identifique regras de negócio existentes no código.
+
+Procure especialmente por:
+
+- validações;
+- condições;
+- limites;
+- cálculos;
+- filtros;
+- ordenações;
+- regras de exibição;
+- regras de preenchimento;
+- permissões;
+- estados;
+- mensagens condicionais.
+
+Explique essas regras em linguagem natural.
+
+Quando uma regra puder ser identificada apenas parcialmente, indique
+essa limitação.
+
+==================================================
+15. TELAS E INTERFACES
+==================================================
+
+Identifique as páginas ou telas existentes.
+
+Para cada uma, descreva:
+
+- finalidade;
+- elementos principais;
+- funcionalidades disponíveis;
+- arquivos relacionados;
+- navegação para outras páginas, quando identificada.
+
+==================================================
+16. ARQUITETURA IDENTIFICADA
+==================================================
+
+Com base exclusivamente no projeto analisado, descreva a arquitetura
+que efetivamente existe.
+
+Não substitua a arquitetura existente por uma arquitetura considerada
+"ideal".
+
+Por exemplo, se o projeto for simplesmente:
+
+HTML + CSS + JavaScript
+
+documente dessa forma.
+
+Se houver:
+
+Frontend → API → Backend → Banco de dados
+
+documente essa arquitetura.
+
+Se a arquitetura não puder ser determinada completamente, indique
+quais partes foram identificadas e quais não puderam ser determinadas.
+
+==================================================
+17. PONTOS IMPORTANTES PARA MANUTENÇÃO
+==================================================
+
+Identifique informações que seriam importantes para alguém que irá
+continuar o desenvolvimento.
+
+Inclua, quando identificável:
+
+- arquivos centrais;
+- funções centrais;
+- dependências entre arquivos;
+- pontos de entrada;
+- configurações;
+- APIs;
+- dados utilizados;
+- mecanismos de armazenamento;
+- componentes reutilizados;
+- comportamentos que precisam ser preservados.
+
+Não transforme essa seção em uma avaliação subjetiva da qualidade do
+código.
+
+Documente apenas aspectos relevantes para manutenção.
+
+==================================================
+18. LIMITAÇÕES DA DOCUMENTAÇÃO
+==================================================
+
+Crie uma seção informando o que NÃO pôde ser determinado somente
+através dos arquivos disponíveis.
+
+Exemplos:
+
+- finalidade de determinada função;
+- origem de determinado dado;
+- funcionamento de uma API externa;
+- credenciais;
+- configuração de servidor;
+- banco de dados não disponibilizado;
+- arquivos ausentes;
+- comportamento dependente de ambiente externo.
+
+Não tente preencher essas lacunas com suposições.
+
+==================================================
+19. CONCLUSÃO
+==================================================
+
+Finalize o documento apresentando uma visão consolidada do projeto:
+
+- finalidade identificada;
+- principais funcionalidades;
+- tecnologias identificadas;
+- organização;
+- fluxo principal;
+- principais relações entre os arquivos.
+
+A conclusão deve ser baseada no conteúdo efetivamente analisado.
+
+==================================================
+20. FORMATO DO DOCUMENTO
+==================================================
+
+Crie o arquivo:
+
+CONTEXTO_PROJETO.md
+
+Utilize Markdown.
+
+Organize o conteúdo com:
+
+# Título
+
+## Seções
+
+### Subseções
+
+Utilize:
+
+- listas;
+- tabelas quando forem úteis;
+- blocos de código somente quando necessários;
+- árvores de diretórios;
+- diagramas ASCII/Markdown quando ajudarem na compreensão.
+
+O documento deve ser suficientemente detalhado para permitir que outra
+pessoa compreenda o projeto sem precisar inicialmente ler todos os
+arquivos de código.
+
+Entretanto, não transforme a documentação em uma cópia dos arquivos.
+
+O objetivo é explicar:
+
+O QUE É O PROJETO
+↓
+COMO ESTÁ ORGANIZADO
+↓
+COMO FUNCIONA
+↓
+COMO OS ARQUIVOS SE RELACIONAM
+↓
+COMO OS DADOS SÃO PROCESSADOS
+↓
+QUAIS FUNCIONALIDADES EXISTEM
+↓
+O QUE PRECISA SER CONHECIDO PARA CONTINUAR O PROJETO
+
+==================================================
+21. REGRA FINAL
+==================================================
+
+Antes de finalizar o CONTEXTO_PROJETO.md, verifique se:
+
+[ ] Toda a estrutura de diretórios foi analisada.
+[ ] Os arquivos relevantes foram identificados.
+[ ] A finalidade foi baseada em evidências.
+[ ] As funcionalidades foram verificadas no código.
+[ ] HTML foi analisado.
+[ ] CSS foi analisado.
+[ ] JavaScript foi analisado.
+[ ] As relações entre arquivos foram identificadas.
+[ ] O fluxo de dados foi documentado.
+[ ] As tecnologias foram identificadas somente quando comprovadas.
+[ ] As regras de negócio foram identificadas.
+[ ] As telas foram documentadas.
+[ ] A arquitetura real foi documentada.
+[ ] As limitações foram registradas.
+[ ] Nenhuma informação foi inventada.
+[ ] Nenhuma arquitetura foi presumida.
+[ ] Nenhuma estrutura de diretórios foi presumida.
+[ ] O documento explica o projeto sem simplesmente copiar o código.
+
+IMPORTANTE:
+
+O projeto já existe.
+
+Sua tarefa NÃO é projetar um novo sistema.
+
+Sua tarefa é RECONSTRUIR E DOCUMENTAR O CONTEXTO DO SISTEMA EXISTENTE
+A PARTIR DAS EVIDÊNCIAS DISPONÍVEIS.

@@ -1,80 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
 
     <!-- 1. A Meta Tag Viewport: essencial para a responsividade -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Perfil Responsivo</title>
 
-    <!-- Link para a folha de estilos externa -->
-    <link rel="stylesheet" href="..//css/curriculo_2.css">
-</head>
+    <!-- Carrega curriculo_2.css, onde estão os estilos e as media queries desta página. -->
+    <link rel="stylesheet" href="../css/curriculo_2.css" />
+  </head>
 
-<body>
-
+  <body>
+    <!-- .site-header estiliza o cabeçalho; veja o seletor correspondente no CSS. -->
     <header class="site-header">
-        <h1>Meu Perfil</h1>
+      <h1>Meu Perfil</h1>
     </header>
 
+    <!-- .site-main limita a largura e ajusta o espaçamento do conteúdo principal. -->
     <main class="site-main">
-        <!-- Seção de introdução com foto e bio -->
-        <section class="intro-section">
-            <div class="profile-pic-container">
-                <!-- Imagem de exemplo de um serviço de placeholder -->
-                <img src="..//imagens/arquivo.jpg" alt="Foto de perfil">
-            </div>
-            <div class="bio-container">
-                <h2>Joana Silva</h2>
-                <p>Desenvolvedora Web e entusiasta de design responsivo. Transformando ideias em experiências digitais
-                    fluidas e acessíveis para todos os dispositivos.</p>
-            </div>
-        </section>
+      <!-- Seção de introdução com foto e bio -->
+      <!-- .intro-section reorganiza foto e bio em telas maiores. -->
+      <section class="intro-section">
+        <!-- A imagem é dimensionada e recortada pelo seletor .profile-pic-container img. -->
+        <div class="profile-pic-container">
+          <!-- Imagem de exemplo de um serviço de placeholder -->
+          <img src="../imagens/arquivo.jpg" alt="Foto de perfil" />
+        </div>
+        <!-- .bio-container define a largura flexível do texto em telas a partir de 768px. -->
+        <div class="bio-container">
+          <h2>Joana Silva</h2>
+          <p>
+            Desenvolvedora Web e entusiasta de design responsivo. Transformando ideias em
+            experiências digitais fluidas e acessíveis para todos os dispositivos.
+          </p>
+        </div>
+      </section>
 
-        <!-- Seção da galeria de projetos -->
-        <section class="projects-section">
-            <h2>Meus Projetos</h2>
-            <div class="gallery-grid">
-                <!-- Cartão 1 -->
-                <div class="card">
-                    <h3>Projeto Alfa</h3>
-                    <p>Um aplicativo de e-commerce com foco na experiência mobile.</p>
-                </div>
-                <!-- Cartão 2 -->
-                <div class="card">
-                    <h3>Projeto Beta</h3>
-                    <p>Website institucional para uma startup de tecnologia.</p>
-                </div>
-                <!-- Cartão 3 -->
-                <div class="card">
-                    <h3>Projeto Gama</h3>
-                    <p>Blog pessoal com layout minimalista e otimizado para leitura.</p>
-                </div>
-                <!-- Cartão 4 -->
-                <div class="card">
-                    <h3>Projeto Delta</h3>
-                    <p>Sistema de gerenciamento de tarefas com interface amigável.</p>
-                </div>
-                <!-- Cartão 5 -->
-                <div class="card">
-                    <h3>Projeto Épsilon</h3>
-                    <p>Plataforma de cursos online com vídeos e materiais de apoio.</p>
-                </div>
-                <!-- Cartão 6 -->
-                <div class="card">
-                    <h3>Projeto Zeta</h3>
-                    <p>Ferramenta de visualização de dados financeiros.</p>
-                </div>
-            </div>
-        </section>
+      <!-- Seção da galeria de projetos -->
+      <!-- .projects-section e .gallery-grid controlam espaçamento e colunas da galeria. -->
+      <section class="projects-section">
+        <h2>Meus Projetos</h2>
+        <div class="gallery-grid">
+          <!-- Cada .card recebe estilo próprio e a mudança de cor da media query de tablet. -->
+          <!-- Cartão 1 -->
+          <div class="card">
+            <h3>Projeto Alfa</h3>
+            <p>Um aplicativo de e-commerce com foco na experiência mobile.</p>
+          </div>
+          <!-- Cartão 2 -->
+          <div class="card">
+            <h3>Projeto Beta</h3>
+            <p>Website institucional para uma startup de tecnologia.</p>
+          </div>
+          <!-- Cartão 3 -->
+          <div class="card">
+            <h3>Projeto Gama</h3>
+            <p>Blog pessoal com layout miçnimalista e otimizado para leitura.</p>
+          </div>
+          <!-- Cartão 4 -->
+          <div class="card">
+            <h3>Projeto Delta</h3>
+            <p>Sistema de gerenciamento de tarefas com interface amigável.</p>
+          </div>
+          <!-- Cartão 5 -->
+          <div class="card">
+            <h3>Projeto Épsilon</h3>
+            <p>Plataforma de cursos online com vídeos e materiais de apoio.</p>
+          </div>
+          <!-- Cartão 6 -->
+          <div class="card">
+            <h3>Projeto Zeta</h3>
+            <p>Ferramenta de visualização de dados financeiros.</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2025 - Todos os direitos reservados.</p>
+      <p>&copy; 2025 - Todos os direitos reservados.</p>
     </footer>
-
-</body>
-
+  </body>
 </html>

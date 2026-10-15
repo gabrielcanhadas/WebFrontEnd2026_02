@@ -1,14 +1,18 @@
-/* Estilos Gerais */
+/*
+ * Estilos gerais: aplicados ao documento inteiro pelo seletor body.
+ * clamp() limita o padding entre 12px e 20px, variando com a largura da tela.
+ */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+    padding: clamp(12px, 4vw, 20px);
     background-color: #f4f4f4;
 }
 
 .curriculo-container {
     display: flex;
+    /* HTML: <main class="curriculo-container">. Flexbox cria as duas colunas no desktop. */
     /* Transforma o elemento em um contêiner flexível */
     max-width: 1000px;
     margin: 40px auto;
@@ -21,6 +25,8 @@ body {
 /* Coluna da esquerda */
 .perfil-info {
     flex: 1;
+    /* HTML: <aside class="perfil-info">. Ocupa uma parte da proporcao flexivel. */
+    min-width: 0;
     /* Ocupa 1 parte do espaço flexível disponível */
     background-color: #34495e;
     color: #ecf0f1;
@@ -34,7 +40,8 @@ body {
 }
 
 .perfil-info h1 {
-    font-size: 2em;
+    /* Nome no aside; clamp() escala o titulo dentro dos limites definidos. */
+    font-size: clamp(1.5rem, 3vw, 2rem);
     margin: 0;
     color: #fff;
 }
@@ -53,6 +60,7 @@ body {
 }
 
 .perfil-info ul {
+    /* Listas de contato e habilidades dentro do aside. */
     list-style: none;
     padding: 0;
     width: 100%;
@@ -64,13 +72,21 @@ body {
 }
 
 .perfil-info a {
+    /* Links de LinkedIn e GitHub; permite quebrar URLs longas dentro da coluna. */
     color: #ecf0f1;
     text-decoration: none;
+    overflow-wrap: anywhere;
 }
 
-/* Coluna da direita */
+.perfil-info li {
+    /* Itens das listas do aside: evita que textos longos causem overflow horizontal. */
+    overflow-wrap: anywhere;
+}
+
+/* Coluna da direita: corresponde a <section class="main-content"> no HTML. */
 .main-content {
     flex: 2;
+    min-width: 0;
     /* Ocupa 2 partes do espaço flexível disponível */
     padding: 40px 50px;
 }
@@ -80,7 +96,8 @@ body {
 }
 
 .main-content h2 {
-    font-size: 1.5em;
+    /* Titulos Resumo, Experiencia e Educacao; clamp ajusta a escala tipografica. */
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     color: #2c3e50;
     border-bottom: 2px solid #bdc3c7;
     padding-bottom: 5px;
@@ -88,6 +105,7 @@ body {
 
 .item-experiencia,
 .item-educacao {
+    /* HTML: blocos de cada emprego e da formacao. */
     margin-bottom: 20px;
 }
 
@@ -108,10 +126,31 @@ body {
     padding-left: 20px;
 }
 
-/* Responsividade */
+/* Aplicado ao conteudo principal: quebra textos extensos para evitar rolagem horizontal. */
+.main-content {
+    overflow-wrap: anywhere;
+}
+
+/* Responsividade progressiva: ate 900px, reduz espacos antes de empilhar as colunas. */
+@media (max-width: 900px) {
+    .curriculo-container {
+        margin: 24px auto;
+    }
+
+    .perfil-info {
+        padding: 32px 24px;
+    }
+
+    .main-content {
+        padding: 32px;
+    }
+}
+
 @media (max-width: 768px) {
+    /* No main, empilha aside e section em telas estreitas. */
     .curriculo-container {
         flex-direction: column;
+        margin: 12px auto;
         /* Em telas menores, as colunas se empilham */
     }
 
@@ -121,10 +160,25 @@ body {
     }
 
     .perfil-info h1 {
-        font-size: 1.5em;
+        font-size: clamp(1.5rem, 6vw, 2rem);
     }
 
     .main-content {
         padding: 30px 20px;
+    }
+}
+
+/* Ate 600px, reduz padding do body, aside e section para liberar largura no celular. */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .perfil-info {
+        padding: 24px 16px;
+    }
+
+    .main-content {
+        padding: 24px 16px;
     }
 }
