@@ -3,182 +3,187 @@
  * clamp() limita o padding entre 12px e 20px, variando com a largura da tela.
  */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: clamp(12px, 4vw, 20px);
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: clamp(12px, 4vw, 20px);
+  background-color: #f4f4f4;
 }
 
 .curriculo-container {
-    display: flex;
-    /* HTML: <main class="curriculo-container">. Flexbox cria as duas colunas no desktop. */
-    /* Transforma o elemento em um contêiner flexível */
-    max-width: 1000px;
-    margin: 40px auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
+  display: flex;
+  /* HTML: <main class="curriculo-container">. Flexbox cria as duas colunas no desktop. */
+  /* Transforma o elemento em um contêiner flexível */
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 /* Coluna da esquerda */
 .perfil-info {
-    flex: 1;
-    /* HTML: <aside class="perfil-info">. Ocupa uma parte da proporcao flexivel. */
-    min-width: 0;
-    /* Ocupa 1 parte do espaço flexível disponível */
-    background-color: #34495e;
-    color: #ecf0f1;
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    /* Organiza os elementos em coluna */
-    align-items: center;
-    /* Centraliza o conteúdo horizontalmente */
-    text-align: center;
+  flex: 1;
+  /* HTML: <aside class="perfil-info">. Ocupa uma parte da proporcao flexivel. */
+  min-width: 0;
+  /* Ocupa 1 parte do espaço flexível disponível */
+  background-color: #34495e;
+  color: #ecf0f1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  /* Organiza os elementos em coluna */
+  align-items: center;
+  /* Centraliza o conteúdo horizontalmente */
+  text-align: center;
 }
 
 .perfil-info h1 {
-    /* Nome no aside; clamp() escala o titulo dentro dos limites definidos. */
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    margin: 0;
-    color: #fff;
+  /* Nome no aside; clamp() escala o titulo dentro dos limites definidos. */
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0;
+  color: #fff;
 }
 
 .perfil-info h2 {
-    font-size: 1.2em;
-    margin-top: 30px;
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 5px;
-    width: 100%;
+  font-size: 1.2em;
+  margin-top: 30px;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 5px;
+  width: 100%;
 }
 
 .perfil-info p {
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .perfil-info ul {
-    /* Listas de contato e habilidades dentro do aside. */
-    list-style: none;
-    padding: 0;
-    width: 100%;
+  /* Listas de contato e habilidades dentro do aside. */
+  list-style: none;
+  padding: 0;
+  width: 100%;
 }
 
 .perfil-info li {
-    margin-bottom: 10px;
-    text-align: left;
+  margin-bottom: 10px;
+  text-align: left;
 }
 
 .perfil-info a {
-    /* Links de LinkedIn e GitHub; permite quebrar URLs longas dentro da coluna. */
-    color: #ecf0f1;
-    text-decoration: none;
-    overflow-wrap: anywhere;
+  /* Links de LinkedIn e GitHub; permite quebrar URLs longas dentro da coluna. */
+  color: #ecf0f1;
+  text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .perfil-info li {
-    /* Itens das listas do aside: evita que textos longos causem overflow horizontal. */
-    overflow-wrap: anywhere;
+  /* Itens das listas do aside: evita que textos longos causem overflow horizontal. */
+  overflow-wrap: anywhere;
 }
 
 /* Coluna da direita: corresponde a <section class="main-content"> no HTML. */
 .main-content {
-    flex: 2;
-    min-width: 0;
-    /* Ocupa 2 partes do espaço flexível disponível */
-    padding: 40px 50px;
+  flex: 2;
+  min-width: 0;
+  /* Ocupa 2 partes do espaço flexível disponível */
+  padding: 40px 50px;
 }
 
 .main-content section {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .main-content h2 {
-    /* Titulos Resumo, Experiencia e Educacao; clamp ajusta a escala tipografica. */
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    color: #2c3e50;
-    border-bottom: 2px solid #bdc3c7;
-    padding-bottom: 5px;
+  /* Titulos Resumo, Experiencia e Educacao; clamp ajusta a escala tipografica. */
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  color: #2c3e50;
+  border-bottom: 2px solid #bdc3c7;
+  padding-bottom: 5px;
 }
 
 .item-experiencia,
 .item-educacao {
-    /* HTML: blocos de cada emprego e da formacao. */
-    margin-bottom: 20px;
+  /* HTML: blocos de cada emprego e da formacao. */
+  margin-bottom: 20px;
 }
 
 .item-experiencia h3 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #2980b9;
+  margin: 0;
+  font-size: 1.2em;
+  color: #2980b9;
 }
 
 .periodo {
-    font-style: italic;
-    color: #7f8c8d;
-    margin: 5px 0;
+  font-style: italic;
+  color: #7f8c8d;
+  margin: 5px 0;
 }
 
 .item-experiencia ul {
-    margin-top: 10px;
-    padding-left: 20px;
+  margin-top: 10px;
+  padding-left: 20px;
 }
 
 /* Aplicado ao conteudo principal: quebra textos extensos para evitar rolagem horizontal. */
 .main-content {
-    overflow-wrap: anywhere;
+  overflow-wrap: anywhere;
 }
 
 /* Responsividade progressiva: ate 900px, reduz espacos antes de empilhar as colunas. */
 @media (max-width: 900px) {
-    .curriculo-container {
-        margin: 24px auto;
-    }
+  .curriculo-container {
+    margin: 24px auto;
+  }
 
-    .perfil-info {
-        padding: 32px 24px;
-    }
+  .perfil-info {
+    padding: 32px 24px;
+    background-color: #fcc2b9;
+    color: #050505;
+  }
 
-    .main-content {
-        padding: 32px;
-    }
+  .main-content {
+    padding: 32px;
+  }
 }
 
 @media (max-width: 768px) {
-    /* No main, empilha aside e section em telas estreitas. */
-    .curriculo-container {
-        flex-direction: column;
-        margin: 12px auto;
-        /* Em telas menores, as colunas se empilham */
-    }
+  /* No main, empilha aside e section em telas estreitas. */
+  .curriculo-container {
+    flex-direction: column;
+    margin: 12px auto;
+    /* Em telas menores, as colunas se empilham */
+  }
 
-    .perfil-info {
-        padding: 30px 20px;
-        border-bottom: 5px solid #2c3e50;
-    }
+  .perfil-info {
+    padding: 30px 20px;
+    border-bottom: 5px solid #2c3e50;
+    background-color: #4b0202;
+    color: #ffffff;
+  }
 
-    .perfil-info h1 {
-        font-size: clamp(1.5rem, 6vw, 2rem);
-    }
+  .perfil-info h1 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
 
-    .main-content {
-        padding: 30px 20px;
-    }
+  .main-content {
+    padding: 30px 20px;
+  }
 }
 
 /* Ate 600px, reduz padding do body, aside e section para liberar largura no celular. */
 @media (max-width: 600px) {
-    body {
-        padding: 12px;
-    }
+  body {
+    padding: 12px;
+  }
 
-    .perfil-info {
-        padding: 24px 16px;
-    }
+  .perfil-info {
+    padding: 24px 16px;
+    background-color: #2c7b02;
+  }
 
-    .main-content {
-        padding: 24px 16px;
-    }
+  .main-content {
+    padding: 24px 16px;
+  }
 }
