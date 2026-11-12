@@ -1,0 +1,184 @@
+<!doctype html>
+<!-- Declara que este documento é HTML5. -->
+<html lang="pt-BR">
+  <!-- Abre o elemento raiz <html> e define o idioma do conteúdo como Português do Brasil. -->
+
+  <head>
+    <!-- Início da seção de metadados e links (não exibida diretamente na página). -->
+    <meta charset="UTF-8" />
+    <!-- Define a codificação de caracteres para UTF-8, garantindo suporte a acentuação e caracteres especiais. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configuração para dispositivos móveis: largura da viewport igual à largura do dispositivo e escala inicial 1.0. -->
+    <title>Recursos de Acessibilidade</title>
+    <!-- Título da página que aparece na aba do navegador e em resultados de busca. -->
+    <link rel="stylesheet" href="../css/altocontraste.css" />
+    <!-- Link para o arquivo CSS externo que estiliza a página; caminho relativo até a pasta css. -->
+  </head>
+  <!-- Fecha a seção head. -->
+
+  <body>
+    <!-- Início do corpo do documento: todo o conteúdo visível ao usuário fica aqui. -->
+    <header>
+      <!-- Elemento semântico que contém o cabeçalho da página. -->
+      <h1>Demonstração de Recursos de Acessibilidade</h1>
+      <!-- Título principal da página, usado também por leitores de tela como estrutura principal. -->
+      <div id="controles-acessibilidade">
+        <!-- Contêiner que agrupa os controles de acessibilidade; o ID é referenciado pelo CSS/JS. -->
+
+        <!-- Contraste -->
+        <button id="contraste-7-1-alternar" aria-pressed="false" data-contraste-nivel="7-1">
+          Contraste 7:1
+        </button>
+        <!--
+                Botão para alternar o modo de alto contraste 7:1.
+                - id: usado pelo JavaScript para adicionar listeners.
+                - aria-pressed: indica estado (false = não pressionado). Atualizado dinamicamente.
+                - data-contraste-nivel: atributo customizado que indica o nível do contraste (usado pelo JS).
+
+                O atributo data-contraste-nivel não é um atributo HTML padrão.
+                --------------------------------------------------------------
+                Ele é um atributo de dados personalizado (ou data attribute).
+                
+                Atributos de Dados Personalizados (data-*)
+                ------------------------------------------
+                O HTML5 introduziu a possibilidade de adicionar atributos personalizados a qualquer elemento HTML, 
+                desde que eles comecem com o prefixo data-.
+
+                Padrão: O prefixo data- é padrão e válido de acordo com as especificações do HTML.
+
+                Não Padrão: O nome que segue o prefixo (neste caso, contraste-nivel) é definido pelo 
+                            desenvolvedor do site para um propósito específico (neste caso, armazenar o 
+                            nível de contraste desejado).
+
+                Por que ele é usado?
+                    Os desenvolvedores usam atributos data-* para armazenar dados adicionais sobre um elemento 
+                    HTML sem precisar recorrer a outras soluções, como classes CSS complexas ou manipulação de 
+                    JavaScript em excesso.
+
+                No contexto do botão de contraste:
+                    O atributo data-contraste-nivel="7-1" armazena a informação exata de qual nível de contraste 
+                    deve ser aplicado.
+                    Um script JavaScript no site lê esse valor ("7-1") quando o botão é clicado.
+                    O script usa essa informação para aplicar o esquema de cores correspondente à interface do usuário.
+                    Portanto, embora o mecanismo de data-* seja padrão no HTML, o nome específico data-contraste-nivel 
+                    é uma escolha feita pelo programador.
+            -->
+
+        <button id="contraste-4-5-1-alternar" aria-pressed="false" data-contraste-nivel="4-5-1">
+          Contraste 4.5:1
+        </button>
+        <!--
+                Botão para alternar o modo de contraste 4.5:1.
+                Estrutura idêntica ao anterior, com nível diferente.
+            -->
+
+        <!-- Fonte -->
+        <button id="fonte-aumentar" aria-label="Aumentar Tamanho da Fonte">A+ (Fonte)</button>
+        <!--
+                Botão para aumentar o tamanho da fonte.
+                - id: 'fonte-aumentar' para referenciar no JS.
+                - aria-label: nome acessível para leitores de tela (descritivo).
+            -->
+
+        <button id="fonte-diminuir" aria-label="Diminuir Tamanho da Fonte">A- (Fonte)</button>
+        <!--
+                Botão para diminuir o tamanho da fonte.
+                - id: 'fonte-diminuir' para referenciar no JS.
+            -->
+
+        <!-- Espaçamento -->
+        <button id="altura-linha-alternar" aria-pressed="false">Espaçamento de Linha 2.0x</button>
+        <!--
+                Botão para alternar a altura da linha para 1.5x.
+                - aria-pressed é usado para indicar visualmente (e semânticamente) se está ativo.
+            -->
+
+        <button id="espacamento-paragrafo-alternar" aria-pressed="false">
+          Espaçamento de Parágrafo 2x
+        </button>
+        <!--
+                Botão para alternar o espaçamento entre parágrafos para 2x.
+                - id consistente entre HTML, CSS e JS.
+            -->
+
+        <!-- Reset -->
+        <button id="botao-resetar">Resetar Padrão</button>
+        <!--
+                Botão que reseta todas as configurações de acessibilidade ao padrão.
+                - id: 'botao-resetar' utilizado pelo JS para adicionar o evento de reset.
+            -->
+      </div>
+      <!-- Fecha o contêiner de controles de acessibilidade. -->
+    </header>
+    <!-- Fecha o cabeçalho. -->
+
+    <main>
+      <!-- Elemento semântico para o conteúdo principal da página. -->
+      <section>
+        <!-- Primeira seção do conteúdo principal. -->
+        <h2>O que é Acessibilidade Web?</h2>
+        <!-- Subtítulo da seção. -->
+        <p>
+          A acessibilidade web refere-se à prática de tornar os websites utilizáveis por pessoas com
+          deficiência.
+        </p>
+        <!-- Parágrafo explicativo básico sobre acessibilidade (texto de conteúdo). -->
+
+        <p>
+          De acordo com as Diretrizes de Acessibilidade para Conteúdo Web (WCAG), o contraste mínimo
+          para texto normal deve ser de 4.5:1 (Nível AA). Para o nível AAA, o contraste mínimo é de
+          7:1.
+        </p>
+        <!-- Parágrafo com informação técnica sobre requisitos de contraste segundo WCAG. -->
+      </section>
+      <!-- Fecha a primeira seção. -->
+
+      <section>
+        <!-- Segunda seção do conteúdo principal. -->
+        <h2>Requisitos de Espaçamento</h2>
+        <!-- Subtítulo da seção. -->
+        <p>
+          Para atender aos requisitos de acessibilidade de espaçamento (WCAG 2.1, 1.4.12 Text
+          Spacing), o texto deve poder ser ajustado para:
+        </p>
+        <!-- Parágrafo introdutório. -->
+
+        <ul>
+          <!-- Lista não ordenada com os requisitos de espaçamento. -->
+          <li>
+            Altura da linha (espaçamento entre linhas) de pelo menos 1,5 vezes o tamanho da fonte.
+          </li>
+          <!-- Item 1: requerimento da WCAG para altura de linha. -->
+          <li>Espaçamento dos parágrafos seguintes de pelo menos 2 vezes o tamanho da fonte.</li>
+          <!-- Item 2: requerimento da WCAG para espaçamento entre parágrafos. -->
+        </ul>
+        <!-- Fecha a lista. -->
+
+        <p>
+          O redimensionamento de texto deve permitir que o usuário aumente o tamanho da fonte em até
+          200% sem perda de conteúdo ou funcionalidade.
+        </p>
+        <!-- Parágrafo final da seção com requisito de redimensionamento. -->
+      </section>
+      <!-- Fecha a segunda seção. -->
+    </main>
+    <!-- Fecha o conteúdo principal. -->
+
+    <footer>
+      <!-- Elemento semântico para o rodapé. -->
+      <p>&copy; 2025 Demonstração de Acessibilidade</p>
+      <!-- Texto do rodapé com informação de copyright. -->
+    </footer>
+    <!-- Fecha o rodapé. -->
+
+    <script src="../js/altocontraste.js"></script>
+    <!-- Importa o script JavaScript que controla os comportamentos de acessibilidade; caminho relativo até a pasta js. -->
+    <!--
+        Observações:
+        - O script é carregado no final do body para garantir que o DOM já esteja disponível quando o JS rodar.
+        - O script usa 'DOMContentLoaded' internamente para segurança adicional.
+    -->
+  </body>
+  <!-- Fecha o corpo do documento. -->
+</html>
+<!-- Fecha o elemento root HTML. -->

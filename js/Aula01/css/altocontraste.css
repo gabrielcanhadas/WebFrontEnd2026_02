@@ -1,0 +1,204 @@
+/* :root define variáveis CSS globais que podem ser reutilizadas em todo o arquivo. */
+:root {
+    --tamanho-fonte-base: 16px;
+    /* Define a variável do tamanho base da fonte (16 pixels). */
+    --escala-fonte-atual: 1.0;
+    /* Define a variável da escala atual da fonte (1.0 = 100%). */
+}
+
+/* Estilização do elemento <body> (corpo do documento) */
+body {
+    font-family: Arial, sans-serif;
+    /* Define a família tipográfica padrão usada na página. */
+    line-height: 1.5;
+    /* Define a altura de linha padrão (1.6x o tamanho da fonte). */
+    margin: 0;
+    /* Remove margens padrão do browser. */
+    padding: 0;
+    /* Remove padding padrão do browser. */
+    background-color: #f4f4f4;
+    /* Define a cor de fundo padrão do corpo. */
+    color: #333;
+    /* Define a cor padrão do texto (cinza-escuro). */
+    font-size: calc(var(--tamanho-fonte-base) * var(--escala-fonte-atual));
+    /* Calcula o tamanho final da fonte usando variáveis. */
+}
+
+/* Header e Footer - estilização compartilhada */
+header,
+footer {
+    background-color: #e0e0e0;
+    /* Cor de fundo para cabeçalho e rodapé. */
+    color: #111;
+    /* Cor do texto para cabeçalho e rodapé. */
+    padding: 20px;
+    /* Espaçamento interno de 20px. */
+    text-align: center;
+    /* Centraliza o conteúdo textual. */
+}
+
+/* Estilização do container principal */
+main {
+    padding: 20px;
+    /* Espaçamento interno para o main. */
+    max-width: 800px;
+    /* Define largura máxima para legibilidade. */
+    margin: auto;
+    /* Centraliza horizontalmente o main na viewport. */
+}
+
+/* Estilização de cada seção para separá-las visualmente */
+section {
+    margin-bottom: 30px;
+    /* Espaço inferior entre seções. */
+    padding: 15px;
+    /* Preenchimento interno nas seções. */
+    border: 1px solid #ccc;
+    /* Borda sutil ao redor de cada seção. */
+    border-radius: 5px;
+    /* Cantos levemente arredondados. */
+}
+
+/* Estilos de títulos (h1 e h2) */
+h1,
+h2 {
+    color: #0056b3;
+    /* Cor de destaque para títulos (azul). */
+}
+
+/* Controles de acessibilidade - container */
+#controles-acessibilidade {
+    display: flex;
+    /* Usa flexbox para organizar botões em linha. */
+    flex-wrap: wrap;
+    /* Permite quebra de linha se não houver espaço. */
+    justify-content: center;
+    /* Centraliza os botões horizontalmente. */
+    gap: 10px;
+    /* Espaço entre os botões. */
+    margin-top: 10px;
+    /* Espaço acima do grupo de botões. */
+}
+
+/* Estilo base para todos os botões dentro de #controles-acessibilidade */
+#controles-acessibilidade button {
+    padding: 8px 15px;
+    /* Preenchimento interno (vertical 8px, horizontal 15px). */
+    background-color: #007bff;
+    /* Cor de fundo padrão (azul). */
+    color: #fff;
+    /* Cor do texto dos botões (branco). */
+    border: none;
+    /* Remove a borda padrão do botão. */
+    border-radius: 5px;
+    /* Arredonda os cantos do botão. */
+    cursor: pointer;
+    /* Cursor muda para indicar que é clicável. */
+}
+
+/* Estado hover dos botões para feedback visual ao passar o mouse */
+#controles-acessibilidade button:hover {
+    background-color: #0056b3;
+    /* Escurece o azul no hover para indicar interatividade. */
+}
+
+/* Estado visual quando o botão está ativo (aria-pressed="true") */
+#controles-acessibilidade button[aria-pressed="true"] {
+    background-color: #cc0000;
+    /* Vermelho para indicar que o modo está ligado. */
+    color: #fff;
+    /* Garante contraste do texto no estado ativo. */
+}
+
+/* Estado hover quando o botão JÁ ESTÁ ATIVO */
+#controles-acessibilidade button[aria-pressed="true"]:hover {
+    background-color: #990000;
+    /* Tom de vermelho mais escuro para feedback visual no hover do botão ativo. */
+}
+
+/* ========================================================= */
+/* CLASSES DE CONTRASTE (nomes em português, usados pelo JS) */
+/* ========================================================= */
+
+/* Modo Contraste 7:1 (fundo preto, texto amarelo claro) */
+.contraste-7-1 {
+    background-color: #000 !important;
+    /* Fundo preto; !important para garantir precedência. */
+    color: #ffff66 !important;
+    /* Texto amarelo claro para alto contraste. */
+}
+
+/* Ajustes de header/footer quando o corpo tem .contraste-7-1 */
+.contraste-7-1 header,
+.contraste-7-1 footer {
+    background-color: #111 !important;
+    /* Fundo levemente diferente no header/footer. */
+    color: #ffff66 !important;
+    /* Texto amarelo claro. */
+    border-bottom: 2px solid #ffff66;
+    /* Borda inferior amarela para separação visual. */
+}
+
+/* Estilização de seções no modo contraste 7:1 */
+.contraste-7-1 section {
+    border-color: #ffff66 !important;
+    /* Bordas das seções ficam amarelas. */
+}
+
+/* Títulos no modo contraste 7:1 */
+.contraste-7-1 h1,
+.contraste-7-1 h2 {
+    color: #ffffff !important;
+    /* Títulos em branco para garantir legibilidade. */
+}
+
+/* Modo Contraste 4.5:1 (fundo preto, texto branco) */
+.contraste-4-5-1 {
+    background-color: #000 !important;
+    /* Fundo preto. */
+    color: #ffffff !important;
+    /* Texto branco para contraste elevado. */
+}
+
+/* Ajustes de header/footer para 4.5:1 */
+.contraste-4-5-1 header,
+.contraste-4-5-1 footer {
+    background-color: #111 !important;
+    /* Fundo um pouco mais claro que o corpo. */
+    color: #ffffff !important;
+    /* Texto branco. */
+    border-bottom: 2px solid #ffffff;
+    /* Borda inferior branca para separação. */
+}
+
+/* Seções no modo 4.5:1 */
+.contraste-4-5-1 section {
+    border-color: #ffffff !important;
+    /* Bordas das seções ficam brancas. */
+}
+
+/* Títulos no modo 4.5:1 */
+.contraste-4-5-1 h1,
+.contraste-4-5-1 h2 {
+    color: #ffffff !important;
+    /* Garante que títulos permaneçam legíveis. */
+}
+
+/* ========================================================= */
+/* CLASSES DE ESPAÇAMENTO (nomes em português)               */
+/* ========================================================= */
+
+/* Altura da linha 2.0x */
+.altura-linha-1-5 {
+    line-height: 2.0 !important;
+    /* Força altura de linha de 2.0 quando ativa. */
+}
+
+/* Espaçamento entre parágrafos 2x */
+.espacamento-paragrafo-2 p,
+.espacamento-paragrafo-2 ul,
+.espacamento-paragrafo-2 ol,
+.espacamento-paragrafo-2 blockquote {
+    margin-bottom: 2em !important;
+    /* Define margem inferior equivalente a 2 vezes a fonte atual (2em). */
+}

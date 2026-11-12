@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Template Strings - Exemplo</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+
+      .card {
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 8px;
+        width: 300px;
+      }
+
+      h2 {
+        color: #333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Exemplo com Template Strings</h1>
+
+    <div id="app"></div>
+
+    <script>
+      // Dados
+      const titulo = "Lista de Frutas";
+      const frutas = ["Maçã", "Banana", "Tangerina", "Uva", "Abacaxi", "Kiwi"];
+
+      // Template string com múltiplas linhas + JS embutido
+      const conteudo = `
+      <div class="card">
+        <h2>${titulo}</h2>
+        <ul>
+          ${frutas.map((fruta) => `<li>${fruta}</li>`).join("")}
+        </ul>
+      </div>
+    `;
+
+      // Inserindo no HTML
+      document.getElementById("app").innerHTML = conteudo;
+    </script>
+  </body>
+</html>

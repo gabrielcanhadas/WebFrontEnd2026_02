@@ -1,0 +1,101 @@
+/* Estilos globais */
+body {
+  margin: 0; /* Remove a margem padrão do body */
+  min-width: 250px; /* Garante uma largura mínima para usabilidade */
+}
+
+/* Aplica o box-sizing border-box a todos os elementos para facilitar o layout */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilos para a lista não ordenada */
+ul {
+  margin: 0;
+  padding: 0; /* Remove o padding padrão da lista */
+}
+
+/* Estilos para cada item da lista */
+ul li {
+  cursor: pointer; /* Muda o cursor para indicar interatividade */
+  position: relative; /* Necessário para posicionar o botão 'fechar' (close) de forma absoluta */
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+}
+
+/* Efeito zebrado: aplica um fundo diferente para itens ímpares */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Efeito hover: muda o fundo ao passar o mouse */
+ul li:hover {
+  background: #ddd;
+}
+
+/* Estilo para tarefas concluídas (classe 'checked' adicionada pelo JS) */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through; /* Risca o texto */
+}
+
+/* Estilos para o botão 'fechar' (o 'x') */
+.close {
+  position: absolute; /* Posicionamento absoluto em relação ao seu pai (li) */
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+/* Efeito hover para o botão 'fechar' */
+.close:hover {
+  background-color: blueviolet;
+  color: white;
+}
+
+/* Estilos para o cabeçalho da aplicação */
+.header {
+  background-color: blueviolet;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/* Técnica de clearfix para garantir que o header contenha os elementos flutuantes (input e addBtn) */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Estilos para o campo de entrada (input) */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%; /* Ocupa 75% da largura do header */
+  padding: 10px;
+  float: left; /* Flutua à esquerda para ficar ao lado do botão */
+  font-size: 16px;
+}
+
+/* Estilos para o botão 'Incluir' */
+.addBtn {
+  padding: 10px;
+  width: 25%; /* Ocupa 25% da largura restante do header */
+  background: #d9d9d9;
+  color: #555;
+  float: left; /* Flutua à esquerda para ficar ao lado do input */
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s; /* Transição suave para o efeito hover */
+  border-radius: 0;
+}
+
+/* Efeito hover para o botão 'Incluir' */
+.addBtn:hover {
+  background-color: #bbb;
+}
