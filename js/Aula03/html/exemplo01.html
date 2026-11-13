@@ -9,6 +9,16 @@
         border: 2px solid black;
         margin: 20px;
       }
+      p {
+        color: rgb(255, 255, 255);
+        background-color: gray;
+      }
+      .italico {
+        font-style: italic;
+      }
+      .underline {
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
@@ -32,7 +42,13 @@
         var elementos = document.querySelectorAll("p");
         var i;
         for (i = 0; i < elementos.length; i++) {
-          elementos[i].style.backgroundColor = "yellow";
+          if (elementos[i].style.backgroundColor == "blue") {
+            elementos[i].style.backgroundColor = "gray";
+            elementos[i].classList.remove("italico", "underline");
+          } else {
+            elementos[i].style.backgroundColor = "blue";
+            elementos[i].classList.add("italico", "underline");
+          }
         }
       }
     </script>

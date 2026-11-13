@@ -17,7 +17,8 @@ let close = document.getElementsByClassName("close");
 for (let i = 0; i < close.length; i++) {
   close[i].onclick = function () {
     let div = this.parentElement; // Obtém o elemento pai (o <li>)
-    div.style.display = "none"; // Esconde o <li>
+    // div.style.display = "none"; // Esconde o <li>
+    div.remove(); // Remove o <li>
   };
 }
 
@@ -71,7 +72,8 @@ function addElemento() {
   for (let i = 0; i < close.length; i++) {
     close[i].onclick = function () {
       let div = this.parentElement;
-      div.style.display = "none";
+      // div.style.display = "none"; //oculta o elemento li correspondente ao botão 'close' clicado
+      div.remove(); // Remove o elemento li correspondente ao botão 'close' clicado
     };
   }
 }
