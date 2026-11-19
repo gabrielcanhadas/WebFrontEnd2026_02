@@ -138,9 +138,17 @@ function addElemento() {
 
   // obtém o array atual do localStorage (ou inicializa a partir da lista HTML).
   const tarefas = obterTarefas();
+  const agora = new Date();
+  const dataHora = `${String(agora.getDate()).padStart(2, "0")}/${String(
+    agora.getMonth() + 1,
+  ).padStart(2, "0")}/${agora.getFullYear()} ${String(
+    agora.getHours(),
+  ).padStart(2, "0")}:${String(agora.getMinutes()).padStart(2, "0")}:${String(
+    agora.getSeconds(),
+  ).padStart(2, "0")}`;
   // push acrescenta um novo objeto ao final do array. A propriedade texto
-  // recebe a descrição digitada e concluida começa como false (pendente).
-  tarefas.push({ texto, concluida: false });
+  // recebe data/hora e descrição; concluida começa como false (pendente).
+  tarefas.push({ texto: `[${dataHora}] ${texto}`, concluida: false });
 
   // Limpa o campo para permitir digitar a próxima tarefa.
   campo.value = "";

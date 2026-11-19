@@ -51,9 +51,36 @@ function addElemento() {
   if (inputValue === "") {
     alert("Você precisa descrever a tarefa");
   } else {
+    const agora = new Date();
+    /*    const dataHora = `${agora.getDate()}/${agora.getMonth() + 1}/${agora.getFullYear()} 
+                      ${agora.getHours()}:${agora.getMinutes()}:${agora.getSeconds()}`;
+                      */
+    const dataHora = `${String(agora.getDate()).padStart(2, "0")}/${String(agora.getMonth() + 1).padStart(2, "0")}/${agora.getFullYear()}
+                      ${String(agora.getHours()).padStart(2, "0")}:${String(agora.getMinutes()).padStart(2, "0")}:${String(agora.getSeconds()).padStart(2, "0")}`;
+    li.textContent = `[${dataHora}] ${inputValue}`;
     // Adiciona o novo <li> à lista com id="itemLista"
     document.getElementById("itemLista").appendChild(li);
   }
+
+  /*
+As crases criam uma template string. Dentro dela, ${...} insere o resultado de uma expressão no texto.
+
+Por exemplo:
+
+`${agora.getDate()}`
+
+insere o dia do mês. Como os métodos de Date retornam números, o código usa String(...) para convertê-los em texto. 
+Isso permite chamar .padStart(2, "0"), que completa com um zero à esquerda quando o valor tem apenas um dígito: 7 vira "07".
+
+Cada parte funciona assim:
+- agora.getDate() retorna o dia do mês, de 1 a 31.
+- agora.getMonth() + 1 retorna o mês. O + 1 é necessário porque getMonth() conta de 0 a 11.
+- agora.getFullYear() retorna o ano com quatro dígitos.
+- getHours(), getMinutes() e getSeconds() retornam a hora, os minutos e os segundos.
+- As barras, os espaços e os dois-pontos são caracteres fixos que separam as partes.
+Por exemplo, se a data for 5 de março de 2026 às 9h04min02s, o resultado será:
+05/03/2026 09:04:02
+*/
 
   // Limpa o campo de input após a adição
   document.getElementById("tarefa").value = "";
