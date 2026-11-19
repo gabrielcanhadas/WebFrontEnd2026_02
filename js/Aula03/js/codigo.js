@@ -26,17 +26,13 @@ for (let i = 0; i < close.length; i++) {
 let list = document.querySelector("ul");
 
 // Delegação de Eventos: Adiciona um ouvinte de clique à lista inteira
-list.addEventListener(
-  "click",
-  function (ev) {
-    // Verifica se o elemento clicado é um <li>
-    if (ev.target.tagName === "LI") {
-      // Alterna a classe 'checked' no <li>, ativando o estilo CSS de tarefa concluída
-      ev.target.classList.toggle("checked");
-    }
-  },
-  false,
-);
+list.addEventListener("click", function (ev) {
+  // Verifica se o elemento clicado é um <li>
+  if (ev.target.tagName === "LI") {
+    // Alterna a classe 'checked' no <li>, ativando o estilo CSS de tarefa concluída
+    ev.target.classList.toggle("checked");
+  }
+});
 
 // Função para adicionar um novo item à lista
 function addElemento() {
@@ -52,11 +48,14 @@ function addElemento() {
     alert("Você precisa descrever a tarefa");
   } else {
     const agora = new Date();
+
     /*    const dataHora = `${agora.getDate()}/${agora.getMonth() + 1}/${agora.getFullYear()} 
-                      ${agora.getHours()}:${agora.getMinutes()}:${agora.getSeconds()}`;
+                            ${agora.getHours()}:${agora.getMinutes()}:${agora.getSeconds()}`;
                       */
+
     const dataHora = `${String(agora.getDate()).padStart(2, "0")}/${String(agora.getMonth() + 1).padStart(2, "0")}/${agora.getFullYear()}
                       ${String(agora.getHours()).padStart(2, "0")}:${String(agora.getMinutes()).padStart(2, "0")}:${String(agora.getSeconds()).padStart(2, "0")}`;
+
     li.textContent = `[${dataHora}] ${inputValue}`;
     // Adiciona o novo <li> à lista com id="itemLista"
     document.getElementById("itemLista").appendChild(li);
